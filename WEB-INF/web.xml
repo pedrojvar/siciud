@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>siciud, Sistema de Información Centro de Investigaciones Universidad Distrital</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<!-- Duración de la sesion-->
+	<session-config>
+		<session-timeout>35</session-timeout>
+	</session-config>
+	<!-- Duración de la sesion-->
+
+	<!-- Listener de Sessiones -->
+	 <listener>
+	    <listener-class>
+	      cidc.general.servlet.MonitorSesiones
+	    </listener-class>
+	 </listener>
+    <!-- Listener de Sessiones -->
+    <error-page>
+    	<location>/main.html</location>
+    </error-page>
+
+	<filter>
+    	<filter-name>ResponseOverrideFilter</filter-name>
+    	<filter-class>org.displaytag.filter.ResponseOverrideFilter</filter-class>
+	</filter>
+
+	<!--filtro de recursos-->
+	<filter>
+		<filter-name>Filtro</filter-name>
+		<filter-class>cidc.general.servlet.filtro</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>Filtro</filter-name><url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Filtro</filter-name><url-pattern>*.x</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Filtro</filter-name><url-pattern>*.cript</url-pattern>
+	</filter-mapping>
+	<!--/filtro de recursos-->
+
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+		<param-value>resources.application</param-value>
+	</context-param>
+	<context-param>
+		<param-name>paginaMenuPerfil</param-name><param-value>/menuPerfil.jsp</param-value>
+	</context-param>
+	<context-param>
+		<param-name>paginaMenu</param-name><param-value>/menu.jsp</param-value>
+	</context-param>
+	<context-param>
+		<param-name>paginaHomeUsuario</param-name><param-value>/HomeUsuario.jsp</param-value>
+	</context-param>
+	<context-param>
+		<param-name>paginaHome</param-name><param-value>/main.html</param-value>
+	</context-param>
+
+<!-- Docs -->
+	<servlet>
+	  <servlet-name>DescargaDocumentos</servlet-name>
+	  <servlet-class>cidc.general.servlet.Docs</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>DescargaDocumentos</servlet-name>
+	  <url-pattern>/descarga/documentos</url-pattern>
+	</servlet-mapping>
+	<!-- /Docs -->
+
+	<!-- Notificaciones-->
+	<servlet>
+	  <servlet-name>Notificaciones</servlet-name>
+	  <servlet-class>cidc.notificaciones.servlet.Notificaciones</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>Notificaciones</servlet-name>
+	  <url-pattern>/notificaciones/adminNotificacio.x</url-pattern>
+	</servlet-mapping>
+	<!-- /Notificaciones-->
+
+	<!-- Convocatoria -->
+
+	<!-- SesionUsuario -->
+	<servlet>
+	  <servlet-name>SesionUsuario</servlet-name>
+	  <servlet-class>cidc.general.servlet.SesionUsuario</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>SesionUsuario</servlet-name>
+	  <url-pattern>/ingresoUsuario.x</url-pattern>
+	</servlet-mapping>
+	<!-- /SesionUsuario -->
+
+	<!-- Convocatoria -->
+	<servlet>
+	  <servlet-name>CrearConvocatoria</servlet-name>
+	  <servlet-class>cidc.convocatorias.servlets.Crear</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>CrearConvocatoria</servlet-name>
+	  <url-pattern>/convocatoria/crear.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>Listas</servlet-name>
+	  <servlet-class>cidc.convocatorias.servlets.Listas</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>Listas</servlet-name>
+	  <url-pattern>/convocatoria/Listas.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>Parametrizar</servlet-name>
+	  <servlet-class>cidc.convocatorias.servlets.Parametrizar</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>Parametrizar</servlet-name>
+	  <url-pattern>/convocatoria/Parametrizar.x</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+	  <servlet-name>TerminosArchivo</servlet-name>
+	  <servlet-class>cidc.convocatorias.servlets.CargaTerminosServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>TerminosArchivo</servlet-name>
+	  <url-pattern>/TerminosArchivo.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>ResolucionArchivo</servlet-name>
+	  <servlet-class>cidc.convocatorias.servlets.CargaResolucionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>ResolucionArchivo</servlet-name>
+	  <url-pattern>/ResolucionArchivo.x</url-pattern>
+	</servlet-mapping>
+	<!-- /Convocatoria -->
+
+	<!-- Inscripción -->
+	<servlet>
+	  <servlet-name>Inscripcion</servlet-name>
+	  <servlet-class>cidc.inscripcionConv.servlet.Inscribir</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>Inscripcion</servlet-name>
+	  <url-pattern>/inscripcionConv/Inscripcion.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>InscripcionSis</servlet-name>
+	  <servlet-class>cidc.inscripSistema.servlet.InscripSistema</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>InscripcionSis</servlet-name>
+	  <url-pattern>/inscripcionSis/InscripSistema.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>AjaxInscripcion</servlet-name>
+	  <servlet-class>cidc.inscripcionConv.servlet.Ajax</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AjaxInscripcion</servlet-name>
+	  <url-pattern>/inscripcionConv/Ajax.x</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+	  <servlet-name>Propuesta</servlet-name>
+	  <servlet-class>cidc.inscripcionConv.servlet.ArchivoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>Propuesta</servlet-name>
+	  <url-pattern>/inscripcionConv/Propuesta.x</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+	  <servlet-name>ListaConvocatoria</servlet-name>
+	  <servlet-class>cidc.inscripcionConv.servlet.ListaConvocatoria</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>ListaConvocatoria</servlet-name>
+	  <url-pattern>/inscripcionConv/ListaConvocatoria.x</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+	  <servlet-name>ResumenInscripcion</servlet-name>
+	  <servlet-class>cidc.inscripcionConv.servlet.Resumen</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>ResumenInscripcion</servlet-name>
+	  <url-pattern>/inscripcionConv/Resumen.x</url-pattern>
+	</servlet-mapping>
+
+	<!-- /Inscripción -->
+
+	<!-- AdminPropuestas -->
+	<servlet>
+	  <servlet-name>AjaxAdminPropuestas</servlet-name>
+	  <servlet-class>cidc.adminPropuestas.servlet.Ajax</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AjaxAdminPropuestas</servlet-name>
+	  <url-pattern>/adminPropuestas/Ajax.x</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+	  <servlet-name>ListaPropuestas</servlet-name>
+	  <servlet-class>cidc.adminPropuestas.servlet.ListaPropuestas</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>ListaPropuestas</servlet-name>
+	  <url-pattern>/adminPropuestas/ListaPropuesta.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>EstadoPropuestas</servlet-name>
+	  <servlet-class>cidc.adminPropuestas.servlet.EstadoPropuesta</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>EstadoPropuestas</servlet-name>
+	  <url-pattern>/adminPropuestas/EstadoPropuesta.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>AsignaEvaluador</servlet-name>
+	  <servlet-class>cidc.general.asigPares.servlet.AsignaEvaluador</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AsignaEvaluador</servlet-name>
+	  <url-pattern>/adminAsignacion/AsignaEvaluador.x</url-pattern>
+	</servlet-mapping>
+	<!-- /AdminPropuestas -->
+
+
+	<!-- AdminEvaluador -->
+	<servlet>
+	  <servlet-name>AdminEvaluador</servlet-name>
+	  <servlet-class>cidc.adminEvaluador.servlet.AdminEvaluador</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AdminEvaluador</servlet-name>
+	  <url-pattern>/adminEvaluador/AdminEvaluador.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>CargarDocumentos</servlet-name>
+	  <servlet-class>cidc.adminEvaluador.servlet.CargaDocumentos</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>CargarDocumentos</servlet-name>
+	  <url-pattern>/adminEvaluador/DocumEvaluador.x</url-pattern>
+	</servlet-mapping>
+	<!-- /AdminEvaluador -->
+
+	<!-- GestionEvaluacionPropuestas -->
+	<servlet>
+	  <servlet-name>GestEvaluacion</servlet-name>
+	  <servlet-class>cidc.evalPropuesta.servlet.GestEvaluacion</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>GestEvaluacion</servlet-name>
+	  <url-pattern>/evalPropuestas/GestEvaluacion.x</url-pattern>
+	</servlet-mapping>
+	<!-- /GestionEvaluacionPropuestas-->
+
+	<!-- AjaxAreas -->
+	<servlet>
+	  <servlet-name>AjaxAreas</servlet-name>
+	  <servlet-class>cidc.adminEvaluador.servlet.Ajax</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AjaxAreas</servlet-name>
+	  <url-pattern>/adminEvaluador/Ajax.x</url-pattern>
+	</servlet-mapping>
+	<!-- /AjaxAreas-->
+
+	<!-- AdminProyectos -->
+	<servlet>
+	  <servlet-name>AdminGeneralProyectos</servlet-name>
+	  <servlet-class>cidc.proyectosGeneral.servlet.AdminGeneralProyectos</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AdminGeneralProyectos</servlet-name>
+	  <url-pattern>/GestionGeneralProyectos/AdminGeneralProyectos.x</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	  <servlet-name>AdminProyectos</servlet-name>
+	  <servlet-class>cidc.proyectos.servlet.AdminProyectos</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AdminProyectos</servlet-name>
+	  <url-pattern>/GestionProyectos/AdminProyectos.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>AjaxProyectos</servlet-name>
+	  <servlet-class>cidc.proyectosGeneral.servlet.Ajax</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AjaxProyectos</servlet-name>
+	  <url-pattern>/GestionProyectos/Ajax.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>DocumentosServlet</servlet-name>
+	  <servlet-class>cidc.proyectosGeneral.servlet.DocumentosServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>DocumentosServlet</servlet-name>
+	  <url-pattern>/GestionGeneralProyectos/documentosServlet.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>LeeExcelGastos</servlet-name>
+	  <servlet-class>cidc.proyectos.servlet.GastosExcel</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>LeeExcelGastos</servlet-name>
+	  <url-pattern>/GestionProyectos/CargarExcelGastos.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>ResumenExcel</servlet-name>
+	  <servlet-class>cidc.proyectos.servlet.CrearResumenExcel</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>ResumenExcel</servlet-name>
+	  <url-pattern>/GestionProyectos/CrearResumenExcel.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>ProyectosInvestigador</servlet-name>
+	  <servlet-class>cidc.proyectos.servlet.ProyectosInvestigadores</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>ProyectosInvestigador</servlet-name>
+	  <url-pattern>/GestionProyectos/ProyectosInvestigador.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>CargaDocProyecto</servlet-name>
+	  <servlet-class>cidc.proyectosGeneral.servlet.CargaDocumento</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>CargaDocProyecto</servlet-name>
+	  <url-pattern>/GestionGeneralProyectos/CargarDocumento.x</url-pattern>
+	</servlet-mapping>
+	<!-- /AdminProyectos-->
+
+	<!-- GruposSemilleros-->
+	<servlet>
+	  <servlet-name>AdminGrupos</servlet-name>
+	  <servlet-class>cidc.adminGrupos.servlet.GestionGrupos</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AdminGrupos</servlet-name>
+	  <url-pattern>/adminGrupos/AdminGrupos.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>AjaxAdmingrupos</servlet-name>
+	  <servlet-class>cidc.adminGrupos.servlet.Ajax</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AjaxAdmingrupos</servlet-name>
+	  <url-pattern>/adminGrupos/Ajax.x</url-pattern>
+	</servlet-mapping>
+	<!--/ GruposSemilleros-->
+
+	<!-- Articulos de Investigación-->
+	<servlet>
+	  <servlet-name>AdminArticulos</servlet-name>
+	  <servlet-class>cidc.adminArticulos.servlet.AdminArticulos</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AdminArticulos</servlet-name>
+	  <url-pattern>/adminArticulos/AdminArticulos.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>ArticulosRevista</servlet-name>
+	  <servlet-class>cidc.adminArticulos.servlet.AdminArticulosRevista</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>ArticulosRevista</servlet-name>
+	  <url-pattern>/adminArticulos/AdminArticulosRevista.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>AjaxArticulos</servlet-name>
+	  <servlet-class>cidc.adminArticulos.servlet.Ajax</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AjaxArticulos</servlet-name>
+	  <url-pattern>/adminArticulos/Ajax.x</url-pattern>
+	</servlet-mapping>
+	<!--/ Articulos de Investigación-->
+
+	<!-- Evaluación Articulos-->
+	<servlet>
+	  <servlet-name>EvalArticulos</servlet-name>
+	  <servlet-class>cidc.evalPrueba.servlet.GestEvalArticPrueba</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>EvalArticulos</servlet-name>
+	  <url-pattern>/EvalArticulos/EvalArticPrueba.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>EvalArticEvento</servlet-name>
+	  <servlet-class>cidc.evalArticulo.servlet.EvalArticServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>EvalArticEvento</servlet-name>
+	  <url-pattern>/EvalArticulos/EvalArticEvento.x</url-pattern>
+	</servlet-mapping>
+	<!--/ Evaluación Articulos-->
+
+	<!-- AdminCuentas Usuario-->
+	<servlet>
+	  <servlet-name>AdminCuentas</servlet-name>
+	  <servlet-class>cidc.cuentasUsuario.servlet.AdminCuentasUsuario</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AdminCuentas</servlet-name>
+	  <url-pattern>/AdminUsuarios/AdminCuenta.x</url-pattern>
+	</servlet-mapping>
+	<!--/ AdminCuentas Usuario-->
+
+	<!-- AdminServicios-->
+	<servlet>
+	  <servlet-name>AdminServicios</servlet-name>
+	  <servlet-class>cidc.adminServicios.servlet.AdminServicios</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AdminServicios</servlet-name>
+	  <url-pattern>/AdminServicios/AdminServicios.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>AjaxServicios</servlet-name>
+	  <servlet-class>cidc.adminServicios.servlet.Ajax</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AjaxServicios</servlet-name>
+	  <url-pattern>/AdminServicios/Ajax.x</url-pattern>
+	</servlet-mapping>
+	<!--/ AdminServicios-->
+
+	<!-- Grupos-->
+	<servlet>
+	  <servlet-name>GestionGrupos</servlet-name>
+	  <servlet-class>cidc.adminGrupos.servlet.GruposServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>GestionGrupos</servlet-name>
+	  <url-pattern>/grupos/GestionGrupo.x</url-pattern>
+	</servlet-mapping>
+	<!--/ Grupos-->
+
+	<!-- investigadores-->
+	<servlet>
+	  <servlet-name>GestionInvestigador</servlet-name>
+	  <servlet-class>cidc.adminGrupos.servlet.InvestigServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>GestionInvestigador</servlet-name>
+	  <url-pattern>/invest/gestionInvestig.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>ArticuloInvestigador</servlet-name>
+	  <servlet-class>cidc.adminGrupos.servlet.ArticulosInvest</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>ArticuloInvestigador</servlet-name>
+	  <url-pattern>/invest/articInvestig.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>ArticuloInvestiLista</servlet-name>
+	  <servlet-class>cidc.adminGrupos.servlet.ArticulosListaInvest</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>ArticuloInvestiLista</servlet-name>
+	  <url-pattern>/invest/articInvestigLista.x</url-pattern>
+	</servlet-mapping>
+
+
+	<!--/ investigadores-->
+
+	<!-- mobilidad-->
+	<servlet>
+	  <servlet-name>AdminMovilidad</servlet-name>
+	  <servlet-class>cidc.convMovilidad.servlet.AdminMovilidad</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AdminMovilidad</servlet-name>
+	  <url-pattern>/movilidad/adminMovilidad.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>ArchivosMovilidad</servlet-name>
+	  <servlet-class>cidc.convMovilidad.servlet.ArchivosMovilidadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>ArchivosMovilidad</servlet-name>
+	  <url-pattern>/movilidad/ArchivosMovilidad.x</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+	  <servlet-name>ajaxMovilidad</servlet-name>
+	  <servlet-class>cidc.convMovilidad.servlet.Ajax</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>ajaxMovilidad</servlet-name>
+	  <url-pattern>/movilidad/Ajax.x</url-pattern>
+	</servlet-mapping>
+	<!--/ movilidad-->
+
+	<!-- eval movilidad-->
+	<servlet>
+	  <servlet-name>EvalMovilidad</servlet-name>
+	  <servlet-class>cidc.evalMovilidad.servlet.EvalMovilidad</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>EvalMovilidad</servlet-name>
+	  <url-pattern>/movilidad/evalMovilidad.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>ResultadoComite</servlet-name>
+	  <servlet-class>cidc.evalMovilidad.servlet.EvalMovilidadComite</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>ResultadoComite</servlet-name>
+	  <url-pattern>/movilidad/EvalMovilidadComite.x</url-pattern>
+	</servlet-mapping>
+		
+	<!--/ eval movilidad-->
+
+	<!-- Admin Resultados Convocatoria-->
+	<servlet>
+	  <servlet-name>AdminResultados</servlet-name>
+	  <servlet-class>cidc.resultados.servlet.AdminResultados</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AdminResultados</servlet-name>
+	  <url-pattern>/Resultados/Convocatorias/AdminResConv.x</url-pattern>
+	</servlet-mapping>
+	<!--/ Admin Resultados Convocatoria-->
+
+	<!-- Indicadores-->
+	<servlet>
+	  <servlet-name>Indicadores</servlet-name>
+	  <servlet-class>cidc.publico.servlet.Indicadores</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>Indicadores</servlet-name>
+	  <url-pattern>/indicadores.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>AdminFichas</servlet-name>
+	  <servlet-class>cidc.indicadores.fichasIndicadores.servlet.AdminFichas</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AdminFichas</servlet-name>
+	  <url-pattern>/fichasIndicadores/AdminFichas.x</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+	  <servlet-name>AdminVariables</servlet-name>
+	  <servlet-class>cidc.indicadores.bancoVariables.servlet.AdminVariables</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AdminVariables</servlet-name>
+	  <url-pattern>/bancoVariables/AdminVariables.x</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+	  <servlet-name>AdminReportes</servlet-name>
+	  <servlet-class>cidc.indicadores.reportesIndicadores.servlet.AdminReportes</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AdminReportes</servlet-name>
+	  <url-pattern>/reportesIndicadores/AdminReportes.x</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		  <servlet-name>GeneraPDF</servlet-name>
+		  <servlet-class>cidc.indicadores.fichasIndicadores.servlet.GeneraPDF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GeneraPDF</servlet-name>
+	  	<url-pattern>/fichasIndicadores/GeneraPDF.x</url-pattern>
+	</servlet-mapping>
+
+	<!--/ Indicadores-->
+
+	<!--  Docs Indicadores -->
+    <servlet>
+      <servlet-name>AdminDocs</servlet-name>
+      <servlet-class>cidc.docsIndicadores.servlet.AdminDocs</servlet-class>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>AdminDocs</servlet-name>
+      <url-pattern>/docsIndicadores/AdminDocs.x</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+      <servlet-name>CargarDocs</servlet-name>
+      <servlet-class>cidc.docsIndicadores.servlet.CargarDocs</servlet-class>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>CargarDocs</servlet-name>
+      <url-pattern>/docsIndicadores/CargarDocs.x</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+	  <servlet-name>AdminRAE</servlet-name>
+	  <servlet-class>cidc.docsIndicadores.servlet.AdminRAE</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AdminRAE</servlet-name>
+	  <url-pattern>/docsIndicadores/AdminRAE.x</url-pattern>
+	</servlet-mapping>
+
+    <!--/  Docs Indicadores -->
+
+
+	<!--  AdminConvenios-->
+    <servlet>
+      <servlet-name>AdminConvenio</servlet-name>
+      <servlet-class>cidc.convenios.servlet.AdminConvenios</servlet-class>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>AdminConvenio</servlet-name>
+      <url-pattern>/adminConvenio/AdminConvenio.x</url-pattern>
+    </servlet-mapping>
+    <!--/  AdminConvenios -->
+
+    <!-- Proyectos Antiguos-->
+	<servlet>
+        <servlet-name>ProyectosAntiguos</servlet-name>
+        <servlet-class>cidc.proyectosAntiguos.servlet.ProyectosAntiguos</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProyectosAntiguos</servlet-name>
+        <url-pattern>/proyectosAntiguos/GestProyectos.x</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+	  <servlet-name>ProyectosAntiguosAjax</servlet-name>
+	  <servlet-class>cidc.proyectosAntiguos.servlet.Ajax</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>ProyectosAntiguosAjax</servlet-name>
+	  <url-pattern>/proyectosAntiguos/Ajax.x</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+	  <servlet-name>ArchivoServlet</servlet-name>
+	  <servlet-class>cidc.proyectosAntiguos.servlet.ArchivoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>ArchivoServlet</servlet-name>
+	  <url-pattern>/proyectosAntiguos/ArchivoServlet.x</url-pattern>
+	</servlet-mapping>
+
+    <!--/ Proyectos Antiguos-->
+
+
+	<!--  Encuestas -->
+	<servlet>
+	  <servlet-name>AdminEncuesta</servlet-name>
+	  <servlet-class>cidc.encuestas.servlet.AdminEncuesta</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AdminEncuesta</servlet-name>
+	  <url-pattern>/encuestas/AdminEncuesta.x</url-pattern>
+	</servlet-mapping>
+	<!-- / Encuestas -->
+
+	<!-- CargarDocproyecto -->
+	
+	<!-- /AdminInformes-->
+
+
+	<!-- Unidad Investigaciones -->
+	<servlet>
+	  <servlet-name>AdminUnidad</servlet-name>
+	  <servlet-class>cidc.unidadInvestigacion.servlet.AdminUnidad</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AdminUnidad</servlet-name>
+	  <url-pattern>/unidadInvest/AdminUnidadFacultad.x</url-pattern>
+	</servlet-mapping>
+	<!-- /Unidad Investigaciones-->
+	
+	
+	<!-- Página Web -->
+	<servlet>
+	  <servlet-name>PaginaWeb</servlet-name>
+	  <servlet-class>cidc.publico.servlet.PaginaWeb</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>PaginaWeb</servlet-name>
+	  <url-pattern>/web/Consultas.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>AjaxGruposPagWeb</servlet-name>
+	  <servlet-class>cidc.publico.servlet.Ajax</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AjaxGruposPagWeb</servlet-name>
+	  <url-pattern>/web/Ajax.x</url-pattern>
+	</servlet-mapping>
+	<!-- /Pagina Web-->
+
+
+	<!-- Inscripción y Gestión de Eventos -->
+	<servlet>
+	  <servlet-name>GestionEventos</servlet-name>
+	  <servlet-class>cidc.eventos.servlet.GestionEventos</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>GestionEventos</servlet-name>
+	  <url-pattern>/eventos/GestionEvento.x</url-pattern>
+	</servlet-mapping>
+	<!-- /Inscripción y Gestión de Eventos -->
+
+
+	<!-- Administración de inventarios -->
+	<servlet>
+	  <servlet-name>AdminInventario</servlet-name>
+	  <servlet-class>cidc.inventario.servlet.AdminInventario</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AdminInventario</servlet-name>
+	  <url-pattern>/inventario/InventarioGrupos.x</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	  <servlet-name>AjaxInventario</servlet-name>
+	  <servlet-class>cidc.inventario.servlet.Ajax</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AjaxInventario</servlet-name>
+	  <url-pattern>/inventario/Ajax.x</url-pattern>
+	</servlet-mapping>
+	<!-- /Administración de inventarios -->
+	
+	<!-- Seguimiento a Grupos Plan de Accion -->
+	<servlet>
+	  <servlet-name>PlanAccion</servlet-name>
+	  <servlet-class>cidc.planAccion.servlet.PlanAccion</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>PlanAccion</servlet-name>
+	  <url-pattern>/planAccion/PlanAccion.x</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Servlet Articulos Convocatoria 14-2012 -->
+	<servlet>
+	  <servlet-name>ArticuloConv</servlet-name>
+	  <servlet-class>cidc.articulos_Conv.servlet.ArticuloConv</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>ArticuloConv</servlet-name>
+	  <url-pattern>/articulos_Conv/ArticuloConv.x</url-pattern>
+	</servlet-mapping>	
+	
+	<!-- Servlet Ajax Artículos -->
+	<servlet>
+	  <servlet-name>Ajax</servlet-name>
+	  <servlet-class>cidc.articulos_Conv.servlet.Ajax</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>Ajax</servlet-name>
+	  <url-pattern>/articulos_Conv/Ajax.x</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Certificados Electrónicos -->
+	<servlet>
+	  <servlet-name>AdminCertificados</servlet-name>
+	  <servlet-class>cidc.certificaciones.servlet.AdminCertificados</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AdminCertificados</servlet-name>
+	  <url-pattern>/certificaciones/AdminCertificados.x</url-pattern>
+	</servlet-mapping>	
+	<servlet>
+	  <servlet-name>CertificadosDoc</servlet-name>
+	  <servlet-class>cidc.certificaciones.servlet.CertificadosDoc</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>CertificadosDoc</servlet-name>
+	  <url-pattern>/certificaciones/CertificadosDoc.x</url-pattern>
+	</servlet-mapping>
+	<!-- Certificados Electrónicos -->
+	
+	<!-- Modulo de creación de informes -->
+	<servlet>
+	  <servlet-name>AdminInformes</servlet-name>
+	  <servlet-class>cidc.informes.servlet.AdminInformes</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AdminInformes</servlet-name>
+	  <url-pattern>/Informes/AdminInformes.x</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>AjaxInformes</servlet-name>
+	  <servlet-class>cidc.informes.servlet.Ajax</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>AjaxInformes</servlet-name>
+	  <url-pattern>/Informes/AjaxInformes.x</url-pattern>
+	</servlet-mapping> 
+	<!-- /Modulo de creación de informes -->	
+	
+</web-app>

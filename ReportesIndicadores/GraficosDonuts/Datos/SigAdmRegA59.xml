@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pie>
+  <slice title="NumCupNuePreFacArt" color="BF66AC">90</slice>
+  <slice title="NumCupNuePreFacCie" color="2B65E3">560</slice>
+  <slice title="NumCupNuePreFacIng" color="2D6CCF">450</slice>
+  <slice title="NumCupNuePreFacMed" color="10D804">640</slice>
+  <slice title="NumCupNuePreFacTec" color="4B3546">600</slice>
+  <slice title="NumInsNuePreFacArt" color="5A1B19">200</slice>
+  <slice title="NumInsNuePreFacCie" color="4192AA">710</slice>
+  <slice title="NumInsNuePreFacIng" color="3609A8">2800</slice>
+  <slice title="NumInsNuePreFacMed" color="2B5750">4100</slice>
+  <slice title="NumInsNuePreFacTec" color="1F51CC">2800</slice>
+</pie>
+

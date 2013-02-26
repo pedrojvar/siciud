@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Packaging Generator" default="_packaging_generation_">
+<target name="_packaging_generation_" depends="N65540,N65647"/>
+<target name="N65540" description="siciud.war">
+<jar destfile="siciud.war">
+<zipfileset dir=".">
+<include name="index.html"/>
+</zipfileset>
+<zipfileset dir=".">
+<include name="general.jsp"/>
+</zipfileset>
+<zipfileset dir=".">
+<include name="main.jsp"/>
+</zipfileset>
+<zipfileset dir=".">
+<include name="menuPerfil.jsp"/>
+</zipfileset>
+<zipfileset dir=".">
+<include name="titulo.jsp"/>
+</zipfileset>
+<zipfileset dir="Administrador" prefix="Administrador"/>
+<zipfileset dir="Convocatoria" prefix="Convocatoria"/>
+<zipfileset dir="InscripcionConv" prefix="InscripcionConv"/>
+<zipfileset dir="comp" prefix="comp"/>
+<zipfileset dir="pdf" prefix="pdf"/>
+<zipfileset dir="WEB-INF" prefix="WEB-INF"/>
+</jar>
+</target>
+<target name="N65647" description="CIDC.ear">
+<jar destfile="CIDC.ear">
+<zipfileset dir=".">
+<include name="siciud.war"/>
+</zipfileset>
+<zipfileset dir="." prefix="META-INF">
+<include name="application.xml"/>
+</zipfileset>
+</jar>
+</target>
+</project>

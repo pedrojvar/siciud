@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+  <series>
+    <value xid="0" color="B49A79">asdf</value>
+    <value xid="1" color="415D1C">sss</value>
+  </series>
+  <graphs>
+    <graph gid="0">
+      <value xid="0">654</value>
+      <value xid="1">1</value>
+    </graph>
+  </graphs>
+</chart>
+

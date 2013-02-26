@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+  <series>
+    <value xid="0" color="91FA8F">GRP2</value>
+    <value xid="1" color="86B137">GRUP1</value>
+    <value xid="2" color="1F78E4">VariableCIDC</value>
+  </series>
+  <graphs>
+    <graph gid="0">
+      <value xid="0">3456</value>
+      <value xid="1">1245</value>
+      <value xid="2">120</value>
+    </graph>
+  </graphs>
+</chart>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+  <series>
+    <value xid="0" color="3BF75E">debe</value>
+    <value xid="1" color="75AE2A">se</value>
+  </series>
+  <graphs>
+    <graph gid="0">
+      <value xid="0" />
+      <value xid="1" />
+    </graph>
+  </graphs>
+</chart>
+

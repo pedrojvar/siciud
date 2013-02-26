@@ -1,0 +1,79 @@
+@CHARSET "ISO-8859-1";
+
+BODY.izq{
+	background: url(/siciud/comp/img/fondopagder1.gif);
+	background-repeat:repeat-y;
+	background-position: right;
+}
+BODY.der{
+	background: url(/siciud/comp/img/fondopagizq1.gif);
+	background-repeat:repeat-y;
+	background-position: left;
+}
+BODY{
+	font-family:Verdana;
+}
+CAPTION{
+		BACKGROUND: #23b0be;
+		font-weight:bold;
+	    font-size: 13px;
+		color: #000000;
+	    LINE-HEIGHT: bolder;
+	    FONT-FAMILY: Verdana;
+	    TEXT-ALIGN: center;
+		vertical-align: middle;
+		text-transform: uppercase;
+	    -moz-border-radius:7px 7px 7px 7px;
+}
+
+TABLE.tablas{
+	font-family: verdana,sans serif,helvetica;
+	border-spacing: 3px;
+	border-style: solid;
+	border-width: thin;
+	border-color: #000000;
+}
+fieldset{
+	background-repeat:repeat-x;
+	background-position: top;
+	float:center;
+	border-color:#000000;
+	border-style:solid;
+	border-width:thin;
+}
+legend{
+	font-family:Verdana;
+	BACKGROUND: #FFFFFF;
+	font-weight:bold;
+    COLOR: #000000;
+    FONT-SIZE: 11px;
+}
+.small{
+	font-family:Verdana;
+	font-size:9px;
+	text-transform: lowercase;
+}
+.casEsp{
+	font-family:Verdana;
+	text-transform: lowercase;
+	background-color:#FFCC33;
+	color:#000000;
+    font-size:9px;
+}
+.letraRoja{
+	font-family:Verdana;
+	font-size:10px;
+	color:#FF0000;
+}
+A:link{
+	text-decoration: none;
+	color:#000000;
+	font-size: 10;
+}
+A.paginacion{
+	text-decoration: none;
+	color:#FF0000;
+	font-size: 10;
+}
+
+A:visited { text-decoration: none }

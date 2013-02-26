@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+	<series>
+		<value xid="0">Ciencias y Educacion</value>
+		<value xid="1">Ingenieria</value>
+		<value xid="2">Medio Ambiente y Recursos Naturales</value>
+		<value xid="3">Tecnologica</value>
+		<value xid="4">Artes</value>
+	</series>
+	<graphs>
+		<graph gid='0' title="Estudiantes" color="FF0000">
+			<value xid='0'>307</value>
+			<value xid='1'>78</value>
+			<value xid='2'>172</value>
+			<value xid='3'>206</value>
+			<value xid='4'>37</value>
+		</graph>
+		<graph gid='1' title="Profesores" color="2A0CD0">
+			<value xid='0'>38</value>
+			<value xid='1'>15</value>
+			<value xid='2'>59</value>
+			<value xid='3'>31</value>
+			<value xid='4'>8</value>
+		</graph>
+
+		<graph gid='0' title="Egresados" color="00FF00">
+			<value xid='0'>15</value>
+			<value xid='1'>2</value>
+			<value xid='2'>5</value>
+			<value xid='3'>1</value>
+			<value xid='4'>0</value>
+		</graph>
+	</graphs>
+</chart>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+  <series>
+    <value xid="0" color="44119F">avances</value>
+    <value xid="1" color="92537E">OTRA</value>
+  </series>
+  <graphs>
+    <graph gid="0">
+      <value xid="0">15</value>
+      <value xid="1" />
+    </graph>
+  </graphs>
+</chart>
+

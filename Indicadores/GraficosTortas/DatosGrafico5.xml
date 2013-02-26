@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pie>
+	<slice title ="Ciencias y Educacion" pull_out="true" color="ADD981">49</slice>
+	<slice title ="Ingenieria" color="7F8DA9">19</slice>
+	<slice title ="Medio Ambiente y Recursos Naturales" color="990099">10</slice>
+	<slice title ="Tecnologica" color="FEC514">10</slice>
+	<slice title ="Artes" color="FF0000">2</slice>
+</pie>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+  <series>
+    <value xid="0" color="60A4C0">InvUD</value>
+    <value xid="1" color="2D4BB0">PreUD</value>
+  </series>
+  <graphs>
+    <graph gid="0">
+      <value xid="0">6000</value>
+      <value xid="1">250000</value>
+    </graph>
+  </graphs>
+</chart>
+

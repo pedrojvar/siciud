@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pie>
+  <slice title="GruInvA1Col" color="AF78E1">0</slice>
+  <slice title="GruInvA1FacArt" color="63159F">0</slice>
+  <slice title="GruInvA1FacCie" color="389C91">0</slice>
+  <slice title="GruInvA1FacIng" color="E8E323">0</slice>
+  <slice title="GruInvA1FacMed" color="3E9D41">0</slice>
+  <slice title="GruInvA1FacTec" color="0C9C68">0</slice>
+  <slice title="GruInvACol" color="F5E100">0</slice>
+  <slice title="GruInvAFacArt" color="8AB13F">0</slice>
+  <slice title="GruInvAFacCie" color="8A1EEC">0</slice>
+  <slice title="GruInvAFacIng" color="848A3B">0</slice>
+  <slice title="GruInvAFacMed" color="0B34C3">0</slice>
+  <slice title="GruInvAFacTec" color="F36943">0</slice>
+  <slice title="GruInvBCol" color="000843">0</slice>
+  <slice title="GruInvBFacArt" color="8648A1">0</slice>
+  <slice title="GruInvBFacCie" color="1B3F05">0</slice>
+  <slice title="GruInvBFacIng" color="74CA4F">0</slice>
+  <slice title="GruInvBFacMed" color="1DFDB5">0</slice>
+  <slice title="GruInvBFacTec" color="5C0C6C">0</slice>
+</pie>
+

@@ -1,0 +1,40 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Grupos de investigaci�n de las primeras universidades en Colombia</title>
+<link href="/siciud/comp/css/fondos.css" rel="stylesheet" type="text/css" />
+<link href="/siciud/comp/css/formatos.css" rel="stylesheet" type="text/css" />
+<link href="/siciud/comp/css/tablas.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
+  <!--DWLayoutTable-->
+  <tr>
+    <td colspan="2" valign="top" class="lroja3">
+		    <p align="center">Distribucion de Investigadores en Grupos de Investigacion</p>
+	<div id="flashcontent" align="center"></div>
+	</td>
+	<td colspan="2">
+	<div>
+	<script type="text/javascript" src="GraficosRadial/swfobject.js"></script>
+	<script type="text/javascript">
+		var so = new SWFObject("/siciud/Indicadores/GraficosRadial/Radial.swf", "amradar", "600", "600", "8", "#FFFFFF");
+		so.addVariable("path", "/siciud/Indicadores/GraficosRadial/");
+		so.addVariable("settings_file", encodeURIComponent("/siciud/Indicadores/GraficosRadial/Configuracion1.xml"));
+		so.addVariable("data_file", encodeURIComponent("/siciud/Indicadores/GraficosRadial/DatosGrafico1.xml"));
+
+		so.write("flashcontent");
+
+	</script>
+	</div>
+	</td>
+  </tr>
+<tr>
+    <td width="299" height="22" valign="top"><div align="center">
+      <p>&nbsp;</p>
+      <p><a href="/siciud/Indicadores/Lineas.html"><img src="/siciud/comp/img/Atras2.gif" width="70" height="22" border="0" /></a></p>
+    </div></td>
+ </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+  <series>
+    <value xid="0" color="02DA07">GruInvCFacArt</value>
+    <value xid="1" color="F6922F">GruInvCFacCie</value>
+    <value xid="2" color="F6601B">GruInvCFacIng</value>
+    <value xid="3" color="4128AB">GruInvCFacMed</value>
+    <value xid="4" color="B18AAA">GruInvCFacTec</value>
+  </series>
+  <graphs>
+    <graph gid="0">
+      <value xid="0">2</value>
+      <value xid="1">2</value>
+      <value xid="2">2</value>
+      <value xid="3">2</value>
+      <value xid="4">2</value>
+    </graph>
+  </graphs>
+</chart>
+

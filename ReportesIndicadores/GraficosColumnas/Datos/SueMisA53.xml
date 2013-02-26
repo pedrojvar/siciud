@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+  <series>
+    <value xid="0" color="B49343">GruInvA1Col</value>
+    <value xid="1" color="82CD56">GruInvA1FacArt</value>
+    <value xid="2" color="D3C897">GruInvA1FacCie</value>
+    <value xid="3" color="BD5A86">GruInvA1FacIng</value>
+    <value xid="4" color="6C4CBD">GruInvA1FacMed</value>
+    <value xid="5" color="B50311">GruInvA1FacTec</value>
+    <value xid="6" color="ADF393">GruInvACol</value>
+    <value xid="7" color="4EF4C0">GruInvAFacArt</value>
+    <value xid="8" color="B50787">GruInvAFacCie</value>
+    <value xid="9" color="E2287E">GruInvAFacIng</value>
+    <value xid="10" color="CA7BD4">GruInvAFacMed</value>
+    <value xid="11" color="9D3640">GruInvAFacTec</value>
+    <value xid="12" color="5B4F0D">GruInvBCol</value>
+    <value xid="13" color="9AFF43">GruInvBFacArt</value>
+    <value xid="14" color="231B5B">GruInvBFacCie</value>
+    <value xid="15" color="56D6D1">GruInvBFacIng</value>
+    <value xid="16" color="B92587">GruInvBFacMed</value>
+    <value xid="17" color="552DD0">GruInvBFacTec</value>
+  </series>
+  <graphs>
+    <graph gid="0">
+      <value xid="0">0</value>
+      <value xid="1">0</value>
+      <value xid="2">0</value>
+      <value xid="3">0</value>
+      <value xid="4">0</value>
+      <value xid="5">0</value>
+      <value xid="6">0</value>
+      <value xid="7">0</value>
+      <value xid="8">0</value>
+      <value xid="9">0</value>
+      <value xid="10">0</value>
+      <value xid="11">0</value>
+      <value xid="12">0</value>
+      <value xid="13">0</value>
+      <value xid="14">0</value>
+      <value xid="15">0</value>
+      <value xid="16">0</value>
+      <value xid="17">0</value>
+    </graph>
+  </graphs>
+</chart>
+

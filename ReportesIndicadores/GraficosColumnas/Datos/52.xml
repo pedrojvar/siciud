@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+  <series>
+    <value xid="0" color="673221">NumTotGRUPA1COL</value>
+    <value xid="1" color="39D177">NumTotGRUPA1UD</value>
+    <value xid="2" color="D877CE">NumTotGrupACol</value>
+    <value xid="3" color="3E6F35">NumTotGrupAUD</value>
+    <value xid="4" color="42B781">NumTotGrupBCol</value>
+    <value xid="5" color="E9DC0E">NumTotGrupBUD</value>
+    <value xid="6" color="C5CCB8">NumTotGrupCCol</value>
+    <value xid="7" color="789CF7">NumTotGrupCUD</value>
+    <value xid="8" color="38C3CC">NumTotGrupDCol</value>
+    <value xid="9" color="A398EA">NumTotGrupDUD</value>
+  </series>
+  <graphs>
+    <graph gid="0">
+      <value xid="0">120</value>
+      <value xid="1">0</value>
+      <value xid="2">110</value>
+      <value xid="3">5</value>
+      <value xid="4">245</value>
+      <value xid="5">13</value>
+      <value xid="6">560</value>
+      <value xid="7">34</value>
+      <value xid="8">1280</value>
+      <value xid="9">49</value>
+    </graph>
+  </graphs>
+</chart>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pie>
+  <slice title="NumTotGRUPA1COL" color="54E331">120</slice>
+  <slice title="NumTotGRUPA1UD" color="7EB196">0</slice>
+  <slice title="NumTotGrupACol" color="AC2144">110</slice>
+  <slice title="NumTotGrupAUD" color="61776D">5</slice>
+  <slice title="NumTotGrupBCol" color="357B70">245</slice>
+  <slice title="NumTotGrupBUD" color="C56910">13</slice>
+  <slice title="NumTotGrupCCol" color="5DE3A0">560</slice>
+  <slice title="NumTotGrupCUD" color="F4CE09">34</slice>
+  <slice title="NumTotGrupDCol" color="D1F5E1">1280</slice>
+  <slice title="NumTotGrupDUD" color="4F6F5B">49</slice>
+</pie>
+

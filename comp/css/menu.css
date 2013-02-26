@@ -1,0 +1,92 @@
+	#dhtmlgoodies_slidedown_menu li{
+		list-style-type:none;
+		position:relative;
+	}
+	#dhtmlgoodies_slidedown_menu ul{
+		margin:0px;
+		padding:0px;
+		position:relative;
+	}
+
+	#dhtmlgoodies_slidedown_menu div{
+		margin:0px;
+		padding:0px;
+	}
+	/* 	Layout CSS */
+	#dhtmlgoodies_slidedown_menu{
+		width:150px;
+	}
+
+	/* All A tags - i.e menu items. */
+	#dhtmlgoodies_slidedown_menu a{
+		color: #000000;
+		text-decoration:none;
+		display:block;
+		clear:both;
+		width:150px;
+		padding-left:0px;
+	}
+
+	/*
+	A tags
+	*/
+	#dhtmlgoodies_slidedown_menu .slMenuItem_depth1{	/* Main menu items */
+		-moz-border-radius: 10px;
+		background-image:url("/siciud/comp/img/menu.gif");
+		margin-top:1px;
+		border:1px solid gray;
+		/*border-color: #F8F4F4;*/
+		/*font-weight:bold;*/
+		font-family: verdana;
+		font-size: 12px;
+		color: #000000;
+	}
+	#dhtmlgoodies_slidedown_menu .slMenuItem_depth2{	/* Sub menu items */
+		color: #000000;
+		margin-top:0px;
+		font-family: verdana;
+		font-size: 12px;
+		background-color: #FFFFFF;
+		/*background-image:url("/Icaro/menu/submenu.gif");*/
+	}
+	#dhtmlgoodies_slidedown_menu .slMenuItem_depth3{	/* Sub menu items */
+
+		margin-top:1px;
+		font-style:italic;
+		color:blue;
+	}
+	#dhtmlgoodies_slidedown_menu .slMenuItem_depth4{	/* Sub menu items */
+		margin-top:1px;
+		color:red;
+		background-color: silver;
+	}
+	#dhtmlgoodies_slidedown_menu .slMenuItem_depth5{	/* Sub menu items */
+		margin-top:1px;
+	}
+
+	/* UL tags, i.e group of menu utems.
+	It's important to add style to the UL if you're specifying margins. If not, assign the style directly
+	to the parent DIV, i.e.
+
+	#dhtmlgoodies_slidedown_menu .slideMenuDiv1
+
+	instead of
+
+	#dhtmlgoodies_slidedown_menu .slideMenuDiv1 ul
+	*/
+
+	#dhtmlgoodies_slidedown_menu .slideMenuDiv1 ul{
+		padding:1px;
+	}
+	#dhtmlgoodies_slidedown_menu .slideMenuDiv2 ul{
+		margin-left:1px;
+		padding:1px;
+	}
+	#dhtmlgoodies_slidedown_menu .slideMenuDiv3 ul{
+		margin-left:10px;
+		padding:1px;
+	}
+	#dhtmlgoodies_slidedown_menu .slMenuItem_depth4 ul{
+		margin-left:15px;
+		padding:1px;
+	}

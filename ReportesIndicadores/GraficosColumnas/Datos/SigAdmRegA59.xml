@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+  <series>
+    <value xid="0" color="FE73C0">NumCupNuePreFacArt</value>
+    <value xid="1" color="CCE675">NumCupNuePreFacCie</value>
+    <value xid="2" color="0B45B5">NumCupNuePreFacIng</value>
+    <value xid="3" color="E8A521">NumCupNuePreFacMed</value>
+    <value xid="4" color="B2B1C8">NumCupNuePreFacTec</value>
+    <value xid="5" color="AE5745">NumInsNuePreFacArt</value>
+    <value xid="6" color="639A2E">NumInsNuePreFacCie</value>
+    <value xid="7" color="8EF55B">NumInsNuePreFacIng</value>
+    <value xid="8" color="A620D8">NumInsNuePreFacMed</value>
+    <value xid="9" color="DFCE89">NumInsNuePreFacTec</value>
+  </series>
+  <graphs>
+    <graph gid="0">
+      <value xid="0">90</value>
+      <value xid="1">560</value>
+      <value xid="2">450</value>
+      <value xid="3">640</value>
+      <value xid="4">600</value>
+      <value xid="5">200</value>
+      <value xid="6">710</value>
+      <value xid="7">2800</value>
+      <value xid="8">4100</value>
+      <value xid="9">2800</value>
+    </graph>
+  </graphs>
+</chart>
+

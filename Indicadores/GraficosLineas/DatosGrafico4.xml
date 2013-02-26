@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+	<series>
+        	<value xid="1">1991</value>
+        	<value xid="2">1992</value>
+        	<value xid="3">1993</value>
+        	<value xid="4">1994</value>
+        	<value xid="5">1995</value>
+        	<value xid="6">1996</value>
+        	<value xid="7">1997</value>
+        	<value xid="8">1998</value>
+        	<value xid="9">1999</value>
+        	<value xid="10">2000</value>
+        	<value xid="11">2001</value>
+        	<value xid="12">2002</value>
+        	<value xid="13">2003</value>
+        	<value xid="14">2004</value>
+        	<value xid="15">2005</value>
+        	<value xid="16">2006</value>
+        	<value xid="17">2007</value>
+        	<value xid="18">2008</value>
+        	<value xid="19">2009</value>
+
+ 	</series>
+<graphs>
+	<graph axis = "left" title = "Grupos Clasificados" line_width = "3" color="000000">
+   		<value xid="1">1</value>
+		<value xid="2">2</value>
+   		<value xid="3">5</value>
+   		<value xid="4">5</value>
+   		<value xid="5">11</value>
+   		<value xid="6">11</value>
+		<value xid="7">16</value>
+		<value xid="8">20</value>
+   		<value xid="9">30</value>
+   		<value xid="10">45</value>
+   		<value xid="11">53</value>
+   		<value xid="12">67</value>
+		<value xid="13">76</value>
+		<value xid="14">81</value>
+   		<value xid="15">85</value>
+   		<value xid="16">89</value>
+   		<value xid="17">90</value>
+   		<value xid="18">90</value>
+		<value xid="19">90</value>
+     	</graph>
+	<graph axis = "left" title = "Grupos Registrados" line_width = "3" color="3300FF">
+   		<value xid="1">0</value>
+		<value xid="2">0</value>
+   		<value xid="3">0</value>
+   		<value xid="4">1</value>
+   		<value xid="5">1</value>
+   		<value xid="6">2</value>
+		<value xid="7">3</value>
+		<value xid="8">4</value>
+   		<value xid="9">9</value>
+   		<value xid="10">13</value>
+   		<value xid="11">16</value>
+   		<value xid="12">22</value>
+		<value xid="13">26</value>
+		<value xid="14">35</value>
+   		<value xid="15">47</value>
+   		<value xid="16">57</value>
+   		<value xid="17">62</value>
+   		<value xid="18">77</value>
+		<value xid="19">78</value>
+     	</graph>
+	<graph axis = "left" title = "Grupos Institucionalizados" line_width = "3" color="FF0000">
+   		<value xid="1">0</value>
+		<value xid="2">0</value>
+   		<value xid="3">0</value>
+   		<value xid="4">0</value>
+   		<value xid="5">0</value>
+   		<value xid="6">0</value>
+		<value xid="7">0</value>
+		<value xid="8">0</value>
+   		<value xid="9">0</value>
+   		<value xid="10">0</value>
+   		<value xid="11">1</value>
+   		<value xid="12">5</value>
+		<value xid="13">6</value>
+		<value xid="14">9</value>
+   		<value xid="15">16</value>
+   		<value xid="16">17</value>
+   		<value xid="17">20</value>
+   		<value xid="18">23</value>
+		<value xid="19">35</value>
+     	</graph>
+	<graph axis = "left" title = "Total" line_width = "3" color="66CC00">
+   		<value xid="1">1</value>
+		<value xid="2">2</value>
+   		<value xid="3">5</value>
+   		<value xid="4">6</value>
+   		<value xid="5">12</value>
+   		<value xid="6">13</value>
+		<value xid="7">19</value>
+		<value xid="8">24</value>
+   		<value xid="9">39</value>
+   		<value xid="10">58</value>
+   		<value xid="11">69</value>
+   		<value xid="12">89</value>
+		<value xid="13">102</value>
+		<value xid="14">116</value>
+   		<value xid="15">132</value>
+   		<value xid="16">146</value>
+   		<value xid="17">152</value>
+   		<value xid="18">167</value>
+		<value xid="19">168</value>
+     	</graph>
+</chart>

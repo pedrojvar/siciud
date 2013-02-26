@@ -1,0 +1,27 @@
+@CHARSET "ISO-8859-1";
+
+TABLE.redonda{
+	font-family:Verdana;
+	background-color: #FFFFFF;
+	border-color:#000000;
+		  -moz-border-radius:7px 7px 7px 7px;
+	border-style:ridge;
+}
+TD{
+	FONT-FAMILY: Verdana;
+    FONT-SIZE: 11px;
+}
+TD.redondo {
+	-moz-border-radius:7px 7px 7px 7px;
+}
+TD.menu {
+	background-repeat:no-repeat;
+	width:150px;
+	height:30px;
+}
+TD.login{
+	background: url(/siciud/comp/img/menu/titulotabla.gif);
+	background-repeat:no-repeat;
+	width:120px;
+	height:30px;
+}

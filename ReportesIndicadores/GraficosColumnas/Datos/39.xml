@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+  <series>
+    <value xid="0" color="300D5A">RH1</value>
+    <value xid="1" color="6EEB8E">RH2</value>
+  </series>
+  <graphs>
+    <graph gid="0">
+      <value xid="0">435</value>
+      <value xid="1">1000</value>
+    </graph>
+  </graphs>
+</chart>
+

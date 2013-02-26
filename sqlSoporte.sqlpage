@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SQLPage nameConnection="">
+<Statement><![CDATA[insert into b_categoria values(19,'ProyectosAntiguos');
+
+insert into b_item_categoria (biccategoria,bicnombre,bicperfil)values(19,'Proyectos Antiguos',16);
+
+insert into recursos (rnombre,rurl,riditem,ridperfil,rprimario,rvisible)values('','urlDelRecurso',19,16,true,true);
+
+insert into recursos (rnombre,rurl,riditem,ridperfil,rprimario,rvisible)values('','urlDelRecurso',19,16,false,false);
+
+insert into item_perfil(ipiditem,ipidperfil)values(19,16);
+
+ALTER TABLE b_investigadores DROP CONSTRAINT b_investigadores_pkey;
+ALTER TABLE b_investigadores ADD CONSTRAINT primaria PRIMARY KEY (binvidper, binvidgrupoinv);
+]]></Statement>
+</SQLPage>

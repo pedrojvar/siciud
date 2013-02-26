@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pie>
+  <slice title="GruInvCCol" color="BBDFF1">0</slice>
+  <slice title="GruInvCFacArt" color="3EADAA">2</slice>
+  <slice title="GruInvCFacCie" color="DA7266">2</slice>
+  <slice title="GruInvCFacIng" color="D5FBD7">2</slice>
+  <slice title="GruInvCFacMed" color="F561D6">2</slice>
+  <slice title="GruInvCFacTec" color="E7DC7B">2</slice>
+  <slice title="GruInvDCol" color="73F346">0</slice>
+  <slice title="GruInvDFacArt" color="261078">0</slice>
+  <slice title="GruInvDFacCie" color="6552BF">0</slice>
+  <slice title="GruInvDFacIng" color="DE34C6">0</slice>
+  <slice title="GruInvDFacMed" color="8A96B0">0</slice>
+  <slice title="GruInvDFacTec" color="8C0355">0</slice>
+</pie>
+

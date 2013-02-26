@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Numero de proyectos financiados por Colciencias</title>
+<link href="/siciud/comp/css/fondos.css" rel="stylesheet" type="text/css" />
+<link href="/siciud/comp/css/formatos.css" rel="stylesheet" type="text/css" />
+<link href="/siciud/comp/css/tablas.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
+  <!--DWLayoutTable-->
+  <tr>
+    <td colspan="2" valign="top" class="lroja3">
+		    <p align="center">Grupos de Investigacion por Facultad</p>
+	<div id="flashcontent" align="center"></div>
+	</td>
+	<td colspan="2">
+	<div>
+	<script type="text/javascript" src="/siciud/Indicadores/GraficosTortas/swfobject.js"></script>
+	<script type="text/javascript">
+		var so = new SWFObject("/siciud/Indicadores/GraficosTortas/Tortas.swf", "ampie", "500", "500", "8", "#FFFFFF");
+		so.addVariable("path", "/siciud/Indicadores/GraficosTortas/");
+		so.addVariable("settings_file", encodeURIComponent("/siciud/Indicadores/GraficosTortas/Configuracion1.xml"));
+		so.addVariable("data_file", encodeURIComponent("/siciud/Indicadores/GraficosTortas/DatosGrafico5.xml"));
+
+		so.write("flashcontent");
+
+	</script>
+	</div>
+	</td>
+  </tr>
+<tr>
+    <td align="center">
+      <a href="/siciud/Indicadores/Torta.html"><img src="/siciud/comp/img/Atras.gif" border="0"/></a>
+    </td>
+  <td align="center">
+    <a href="/siciud/Indicadores/Columnas1.html"><img src="/siciud/comp/img/Siguiente.gif" border="0"/></a>
+	</td>
+  </tr>
+</table>
+</body>
+</html>

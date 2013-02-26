@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+  <series>
+    <value xid="0" color="B8E543">NumHomIng</value>
+    <value xid="1" color="16AB12">NumMujIng</value>
+  </series>
+  <graphs>
+    <graph gid="0">
+      <value xid="0">23</value>
+      <value xid="1">36</value>
+    </graph>
+  </graphs>
+</chart>
+

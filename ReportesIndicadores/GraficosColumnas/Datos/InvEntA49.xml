@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+  <series>
+    <value xid="0" color="2814F3">defecto1</value>
+    <value xid="1" color="CEBFAB">defecto2</value>
+  </series>
+  <graphs>
+    <graph gid="0">
+      <value xid="0">126</value>
+      <value xid="1">189</value>
+    </graph>
+  </graphs>
+</chart>
+
