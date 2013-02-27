@@ -233,7 +233,7 @@ session.removeAttribute("requisitos");
     _jspx_th_c_005fif_005f1.setPageContext(_jspx_page_context);
     _jspx_th_c_005fif_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fif_005f0);
     // /convMovilidad/listaPropuestas.jsp(27,1) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fif_005f1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${(sessionScope.datosConv.convNumero==1 or sessionScope.datosConv.convNumero==7 or sessionScope.datosConv.convNumero==16) and (sessionScope.persona.papel!=3 and sessionScope.persona.papel!=5)}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
+    _jspx_th_c_005fif_005f1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${(sessionScope.datosConv.convNumero==1 or sessionScope.datosConv.convNumero==3 or sessionScope.datosConv.convNumero==16) and (sessionScope.persona.papel!=3 and sessionScope.persona.papel!=5)}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
     int _jspx_eval_c_005fif_005f1 = _jspx_th_c_005fif_005f1.doStartTag();
     if (_jspx_eval_c_005fif_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
@@ -262,7 +262,7 @@ session.removeAttribute("requisitos");
     _jspx_th_c_005fif_005f2.setPageContext(_jspx_page_context);
     _jspx_th_c_005fif_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fif_005f0);
     // /convMovilidad/listaPropuestas.jsp(30,1) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fif_005f2.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${(sessionScope.datosConv.convNumero==1 or sessionScope.datosConv.convNumero==7 or sessionScope.datosConv.convNumero==16) and (sessionScope.persona.papel==3 or sessionScope.persona.papel==5)}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
+    _jspx_th_c_005fif_005f2.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${(sessionScope.datosConv.convNumero==1 or sessionScope.datosConv.convNumero==3 or sessionScope.datosConv.convNumero==16) and (sessionScope.persona.papel==3 or sessionScope.persona.papel==5)}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
     int _jspx_eval_c_005fif_005f2 = _jspx_th_c_005fif_005f2.doStartTag();
     if (_jspx_eval_c_005fif_005f2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
@@ -362,7 +362,7 @@ session.removeAttribute("requisitos");
     _jspx_th_c_005fif_005f3.setPageContext(_jspx_page_context);
     _jspx_th_c_005fif_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fif_005f0);
     // /convMovilidad/listaPropuestas.jsp(39,1) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fif_005f3.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${(sessionScope.datosConv.convNumero==2 or sessionScope.datosConv.convNumero==8||sessionScope.datosConv.convNumero==8 or sessionScope.datosConv.convNumero==15) and sessionScope.persona.papel!=1 and sessionScope.persona.papel!=2 and sessionScope.persona.papel!=4  and sessionScope.persona.papel!=6}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
+    _jspx_th_c_005fif_005f3.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${(sessionScope.datosConv.convNumero==2 or sessionScope.datosConv.convNumero==4||sessionScope.datosConv.convNumero==8 or sessionScope.datosConv.convNumero==15) and sessionScope.persona.papel!=1 and sessionScope.persona.papel!=2 and sessionScope.persona.papel!=4  and sessionScope.persona.papel!=6}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
     int _jspx_eval_c_005fif_005f3 = _jspx_th_c_005fif_005f3.doStartTag();
     if (_jspx_eval_c_005fif_005f3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
@@ -391,7 +391,7 @@ session.removeAttribute("requisitos");
     _jspx_th_c_005fif_005f4.setPageContext(_jspx_page_context);
     _jspx_th_c_005fif_005f4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fif_005f0);
     // /convMovilidad/listaPropuestas.jsp(42,1) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fif_005f4.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${(sessionScope.datosConv.convNumero==2 or sessionScope.datosConv.convNumero==8 ||sessionScope.datosConv.convNumero==8 or sessionScope.datosConv.convNumero==15) and (sessionScope.persona.papel==1 or sessionScope.persona.papel==2 or sessionScope.persona.papel==4  or sessionScope.persona.papel==6)}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
+    _jspx_th_c_005fif_005f4.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${(sessionScope.datosConv.convNumero==2 or sessionScope.datosConv.convNumero==4 ||sessionScope.datosConv.convNumero==8 or sessionScope.datosConv.convNumero==15) and (sessionScope.persona.papel==1 or sessionScope.persona.papel==2 or sessionScope.persona.papel==4  or sessionScope.persona.papel==6)}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
     int _jspx_eval_c_005fif_005f4 = _jspx_th_c_005fif_005f4.doStartTag();
     if (_jspx_eval_c_005fif_005f4 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
@@ -491,7 +491,7 @@ session.removeAttribute("requisitos");
     _jspx_th_c_005fif_005f5.setPageContext(_jspx_page_context);
     _jspx_th_c_005fif_005f5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fif_005f0);
     // /convMovilidad/listaPropuestas.jsp(59,1) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fif_005f5.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${(sessionScope.datosConv.convNumero==1 and (sessionScope.persona.papel==3 or sessionScope.persona.papel==5))or(sessionScope.datosConv.convNumero==2 and (sessionScope.persona.papel!=3 and sessionScope.persona.papel!=5))}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
+    _jspx_th_c_005fif_005f5.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${(sessionScope.datosConv.convNumero==3 and (sessionScope.persona.papel==3 or sessionScope.persona.papel==5))or(sessionScope.datosConv.convNumero==4 and (sessionScope.persona.papel!=3 and sessionScope.persona.papel!=5))}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
     int _jspx_eval_c_005fif_005f5 = _jspx_th_c_005fif_005f5.doStartTag();
     if (_jspx_eval_c_005fif_005f5 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
@@ -797,7 +797,7 @@ session.removeAttribute("requisitos");
     _jspx_th_c_005fif_005f8.setPageContext(_jspx_page_context);
     _jspx_th_c_005fif_005f8.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fif_005f7);
     // /convMovilidad/listaPropuestas.jsp(89,2) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fif_005f8.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${(sessionScope.datosConv.convNumero==1 or sessionScope.datosConv.convNumero==7 or sessionScope.datosConv.convNumero==16) and !(sessionScope.persona.papel==3 or sessionScope.persona.papel==5)}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
+    _jspx_th_c_005fif_005f8.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${(sessionScope.datosConv.convNumero==1 or sessionScope.datosConv.convNumero==3 or sessionScope.datosConv.convNumero==16) and !(sessionScope.persona.papel==3 or sessionScope.persona.papel==5)}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
     int _jspx_eval_c_005fif_005f8 = _jspx_th_c_005fif_005f8.doStartTag();
     if (_jspx_eval_c_005fif_005f8 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
@@ -826,7 +826,7 @@ session.removeAttribute("requisitos");
     _jspx_th_c_005fif_005f9.setPageContext(_jspx_page_context);
     _jspx_th_c_005fif_005f9.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fif_005f7);
     // /convMovilidad/listaPropuestas.jsp(92,2) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fif_005f9.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${(sessionScope.datosConv.convNumero==1 or  sessionScope.datosConv.convNumero==7 or sessionScope.datosConv.convNumero==16) and (sessionScope.persona.papel==3 or sessionScope.persona.papel==5)}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
+    _jspx_th_c_005fif_005f9.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${(sessionScope.datosConv.convNumero==1 or  sessionScope.datosConv.convNumero==3 or sessionScope.datosConv.convNumero==16) and (sessionScope.persona.papel==3 or sessionScope.persona.papel==5)}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
     int _jspx_eval_c_005fif_005f9 = _jspx_th_c_005fif_005f9.doStartTag();
     if (_jspx_eval_c_005fif_005f9 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
@@ -902,7 +902,7 @@ session.removeAttribute("requisitos");
     _jspx_th_c_005fif_005f10.setPageContext(_jspx_page_context);
     _jspx_th_c_005fif_005f10.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fif_005f7);
     // /convMovilidad/listaPropuestas.jsp(99,2) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fif_005f10.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${(sessionScope.datosConv.convNumero==2 || sessionScope.datosConv.convNumero==8 or sessionScope.datosConv.convNumero==15) and sessionScope.persona.papel!=1 and sessionScope.persona.papel!=2 and sessionScope.persona.papel!=4  and sessionScope.persona.papel!=6}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
+    _jspx_th_c_005fif_005f10.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${(sessionScope.datosConv.convNumero==2 || sessionScope.datosConv.convNumero==4 or sessionScope.datosConv.convNumero==15) and sessionScope.persona.papel!=1 and sessionScope.persona.papel!=2 and sessionScope.persona.papel!=4  and sessionScope.persona.papel!=6}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
     int _jspx_eval_c_005fif_005f10 = _jspx_th_c_005fif_005f10.doStartTag();
     if (_jspx_eval_c_005fif_005f10 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
@@ -931,7 +931,7 @@ session.removeAttribute("requisitos");
     _jspx_th_c_005fif_005f11.setPageContext(_jspx_page_context);
     _jspx_th_c_005fif_005f11.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fif_005f7);
     // /convMovilidad/listaPropuestas.jsp(102,2) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fif_005f11.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${(sessionScope.datosConv.convNumero==2 || sessionScope.datosConv.convNumero==8 or sessionScope.datosConv.convNumero==15) and (sessionScope.persona.papel==1 or sessionScope.persona.papel==2 or sessionScope.persona.papel==4  or sessionScope.persona.papel==6)}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
+    _jspx_th_c_005fif_005f11.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${(sessionScope.datosConv.convNumero==2 || sessionScope.datosConv.convNumero==4 or sessionScope.datosConv.convNumero==15) and (sessionScope.persona.papel==1 or sessionScope.persona.papel==2 or sessionScope.persona.papel==4  or sessionScope.persona.papel==6)}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
     int _jspx_eval_c_005fif_005f11 = _jspx_th_c_005fif_005f11.doStartTag();
     if (_jspx_eval_c_005fif_005f11 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
