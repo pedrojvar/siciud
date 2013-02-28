@@ -33,17 +33,31 @@
 	<input type="hidden" name="url" value="0">
 	<input type="hidden" name="idPersona" value='<c:out value="${sessionScope.persona.idPersona}" />'>	
 		<table width="100%" align="center">
-				<th colspan="4">Parametros de Búsqueda</th>
+				<th colspan="8">Parametros de Búsqueda</th>
+				<tr>
+					<td class="renglones" width="200px" colspan="2"><b>Nombres</b></td>
+					<td class="renglones" width="200px" colspan="2"><b><input type="text" name="nombre" style="width: 100%"></b></td>
+					<td class="renglones" width="200px" colspan="2"><b>Apellidos</b></td>
+					<td class="renglones" width="200px" colspan="2"><b><input type="text" name="apellidos" style="width: 100%"></b></td>
+				</tr>
 				<tr>
 					<td class="renglones" width="200px" colspan="2"><b>Número de Cédula</b></td>
 					<td class="renglones" width="200px" colspan="2"><b><input type="text" name="cedula" style="width: 100%"></b></td>
-				</tr>
-				<tr>
 					<td class="renglones" width="200px" colspan="2"><b>Código de Verificación</b></td>
 					<td class="renglones" width="200px" colspan="2"><b><input type="text" name="cod_verificacion" style="width: 100%"></b></td>
 				</tr>
 				<tr>
-					<td  colspan="4" align="center"><img src='<c:url value="/comp/img/Buscar.gif"/>' onclick="buscar()">									
+					<td class="renglones" width="200px" colspan="4"><b>Tipo de Certificado</b></td>
+					<td class="renglones" width="200px" colspan="4">
+						<select name="tipo">
+							<option value='3'>Actividades de Investigación</option>
+							<option value='1'>Pertenencia a Grupo/Semillero</option>
+							<option value='2'>Paz y Salvo</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td  colspan="8" align="center"><img src='<c:url value="/comp/img/Buscar.gif"/>' onclick="buscar()">									
 				</tr>				
 		</table>
 	</form>
@@ -56,10 +70,11 @@
 	<input type="hidden" name="id">
 	<input type="hidden" name="estado">
 	<table align="center" class="tablas" width="100%">
-		<caption>Lista de Propuestas inscritas</caption>
+		<caption>Lista de Certificados Generados</caption>
 		<tr>
 			<td class="renglones" align="center"><b>#</b></td>
 			<td class="renglones" align="center" width="20%"><b>Tipo Certificado</b></td>
+			<td class="renglones" align="center" width="20%"><b>Código de Verificación</b></td>
 			<td width="20%" class="renglones" align="center"><b>Fecha y Hora</b></td>
 			<td class="renglones" align="center" width="55%"><b>Grupo/Semillero</b></td>
 			<td class="renglones" align="center" width="5%"><b>Ver</b></td>
@@ -68,6 +83,7 @@
 			<tr <c:if test="${st.count mod 2==0}">class="trb"</c:if>>
 				<td><c:out value="${st.count}" /></td>
 				<td><c:out value="${lista.tipo}" /></td>
+				<td><c:out value="${lista.cod_verificacion}" /></td>
 				<td><c:out value="${lista.fecha_cert}" /></td>
 				<td><c:out value="${lista.nombreGrupo}" /></td>
 				<td valign="middle">

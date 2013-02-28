@@ -16,6 +16,7 @@ import cidc.general.db.CursorDB;
 import cidc.general.db.BaseDB;
 import cidc.general.obj.Globales;
 import cidc.general.pdf.DocumentosPDF;
+import cidc.proyectosGeneral.obj.Proyecto;
 import cidc.certificaciones.obj.CertificacionesOBJ;
 import cidc.convMovilidad.obj.InfoGeneral;
 
@@ -93,14 +94,18 @@ public class CertificadoDB extends BaseDB{
 		
 		return certificado;		
 	}
-	
-	public List buscarCertificados(String cedula, String codVerificacion){
+	/*
+	 * 
+	 */
+	public List buscarCertificados(String cedula, String codVerificacion, String nombre,String apellido,int tipo){
 		Connection cn=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
 		CertificacionesOBJ certificado=null;
 		String cedu;
 		String cod;
+		String nom;
+		String ape;
 		List <CertificacionesOBJ>listacertificados=new ArrayList<CertificacionesOBJ>();		
 		int i=1;
 		try {
@@ -118,11 +123,28 @@ public class CertificadoDB extends BaseDB{
 					cod="%"+codVerificacion+"%";
 			}else
 				cod="%";
+			if(nombre!=null){
+				if(nombre.trim().equals(""))
+					nom="%";
+				else
+					nom="%"+nombre+"%";
+			}else
+				nom="%";
+			if(apellido!=null){
+				if(apellido.trim().equals(""))
+					ape="%";
+				else
+					ape="%"+nombre+"%";
+			}else
+				ape="%";
 			System.out.println("CEDULA---->"+cedu+ " COD_VERIFICACIÓN--->"+cod);
 			cn=cursor.getConnection(super.perfil);
 			ps=cn.prepareStatement(rb.getString("BuscarCertificado"));
 			ps.setString(1,cedu);
 			ps.setString(2,cod);
+			ps.setString(3,nom);
+			ps.setString(4,ape);
+			ps.setInt(5,tipo);
 			System.out.println("Consulta: "+ps);
 			rs=ps.executeQuery();
 			while(rs.next()){
@@ -186,5 +208,40 @@ public class CertificadoDB extends BaseDB{
 			cerrar(cn);
 		}
 		return listacertificados;
+	}
+	/**
+	 * 
+	 * @param idPersona
+	 * @return
+	 */
+	public boolean consultarProyectos(long idPersona){
+		Connection cn=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		Proyecto proy=null;
+		boolean aPaz = true;
+		try {
+			cn=cursor.getConnection(super.perfil);
+			ps=cn.prepareStatement(rb.getString("PazYSalvo"));
+			ps.setLong(1, idPersona);
+			ps.setLong(2, idPersona);
+			System.out.println("Consulta: "+ps.toString());
+			rs=ps.executeQuery();
+			while(rs.next()){
+				int i=1;
+				proy = new Proyecto();
+				proy.setEstado(rs.getInt(i++));
+				aPaz=((proy.getEstado()!=3||proy.getEstado()!=7)?false:true);
+				if(!aPaz)
+					break;
+			}
+		} catch (Exception e) {
+			lanzaExcepcion(e);
+		}finally{
+			cerrar(rs);
+			cerrar(ps);
+			cerrar(cn);
+		}
+		return aPaz;
 	}
 }
