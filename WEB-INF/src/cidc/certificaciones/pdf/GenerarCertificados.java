@@ -2,6 +2,8 @@ package cidc.certificaciones.pdf;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -11,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import cidc.certificaciones.obj.CertificacionesOBJ;
 import cidc.general.obj.Globales;
+import cidc.proyectosGeneral.obj.CoInvest;
+import cidc.proyectosGeneral.obj.Proyecto;
 
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
@@ -82,7 +86,7 @@ public class GenerarCertificados {
 		
 		textoDocumento[0]=clausulasinicio;
 		textoDocumento[1]=clausulas;
-		PdfPTable tablaFirmas =new PdfPTable(2);
+//		PdfPTable tablaFirmas =new PdfPTable(2);
 		PdfPTable tablaEscudo =new PdfPTable(1);
 		PdfPCell c0 = null;
         Image firmaD=null;
@@ -99,11 +103,11 @@ public class GenerarCertificados {
 			tablaEscudo.getDefaultCell().setBorder(Rectangle.NO_BORDER);
 			tablaEscudo.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);			
 			
-			tablaFirmas.setWidths(new int[]{200,200});
-			tablaFirmas.setTotalWidth(450);
-			tablaFirmas.setLockedWidth(true);
-			tablaFirmas.getDefaultCell().setFixedHeight(10);
-			tablaFirmas.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
+//			tablaFirmas.setWidths(new int[]{200,200});
+//			tablaFirmas.setTotalWidth(450);
+//			tablaFirmas.setLockedWidth(true);
+//			tablaFirmas.getDefaultCell().setFixedHeight(10);
+//			tablaFirmas.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
 			//tablaEscudo.writeSelectedRows(0, 5, 72, 780 , writer.getDirectContent());
 		} catch (DocumentException e1) {
 			
@@ -143,6 +147,8 @@ public class GenerarCertificados {
 			certificado.setCuerpo_cer(contenido);
 			inicarDocumentoCertificado(resp,path);
 			agregarContenido(textoDocumento, tablaEscudo);
+			agregarPieDePagina();
+			document.close();
 		} catch (DocumentException e) {
 			e.printStackTrace();
 		}
@@ -168,6 +174,7 @@ public class GenerarCertificados {
 			document.addKeywords("Certificado, electrónico,o.j.a.s");
 			document.addAuthor("CIDC");
 			document.addCreator("Sistema SICIUD");
+			agregarCabecera(pathArchivo);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -195,8 +202,78 @@ public class GenerarCertificados {
 				
 		document.add(total);		
 		document.add(tablaFirmas);
-		document.close();
+		
+	}
+	/**
+	 * 
+	 * @throws DocumentException
+	 */
+	private void agregarCabecera(String path)	throws DocumentException {
+		System.out.println("agregando cabecera");
+		PdfPCell c0 = null;
+		Rectangle rectangulo=this.writer.getPageSize();
+		
+		PdfPTable tablaEscudo =new PdfPTable(1);
+		tablaEscudo.setWidths(new float[]{(rectangulo.getLeft()+rectangulo.getRight()-120)});
+		tablaEscudo.setTotalWidth((rectangulo.getLeft()+rectangulo.getRight()-120));
+		tablaEscudo.getDefaultCell().setFixedHeight(70);
+					
+		try {				
+			
+			Image escudo=Image.getInstance(path.substring(0,path.lastIndexOf("Documentos"))+sep+"comp"+sep+"img"+sep+"escudo.png");
+			escudo.setBorder(0);
+			tablaEscudo.getDefaultCell().setBorder(Rectangle.NO_BORDER);
+			tablaEscudo.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
+			tablaEscudo.addCell(escudo);
+			c0=new PdfPCell(new Paragraph("\n\n\nEL SUSCRITO DIRECTOR DEL CENTRO DE INVESTIGACIONES \n\n\nCERTIFICA QUE:",texto11n));
+			c0.setHorizontalAlignment(Element.ALIGN_CENTER);
+			c0.setBorder(Rectangle.NO_BORDER);
+			tablaEscudo.addCell(c0);
+			tablaEscudo.writeSelectedRows(0, 5, 72, 780 , writer.getDirectContent());
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
+	private void agregarPieDePagina() {
+		
+		try {
+			Rectangle rectangulo = this.writer.getPageSize();
+			PdfPTable tablaPagPie = new PdfPTable(1);
+			PdfPTable tablaMailPie = new PdfPTable(1);
+			tablaPagPie.setWidths(new int[] { 400 });
+			tablaPagPie.setTotalWidth(450);
+			tablaPagPie.setLockedWidth(true);
+			tablaPagPie.getDefaultCell().setFixedHeight(10);
+			tablaMailPie.setWidths(new int[] { 100 });
+			tablaMailPie.setTotalWidth(150);
+			PdfPCell c1 = new PdfPCell(new Paragraph(
+					"Centro de Investigaciones y Desarrollo Científico CIDC",
+					paginacion));
+			c1.setHorizontalAlignment(Element.ALIGN_LEFT);
+			c1.setBorder(Rectangle.NO_BORDER);
+			tablaPagPie.addCell(c1);
+			PdfPCell c2 = new PdfPCell(new Paragraph(
+					"3239300 ext 2610 cidc@udistrital.edu.co", texto8));
+			c2.setHorizontalAlignment(Element.ALIGN_CENTER);
+			c2.setBorder(Rectangle.NO_BORDER);
+			c2.setColspan(3);
+			tablaMailPie.addCell(c2);
+			PdfPCell c3 = new PdfPCell(new Paragraph(
+					"Todos los derechos reservados", texto8));
+			c3.setHorizontalAlignment(Element.ALIGN_CENTER);
+			c3.setBorder(Rectangle.NO_BORDER);
+			c3.setColspan(3);
+			tablaMailPie.addCell(c3);
+			tablaPagPie.writeSelectedRows(0, 5,((rectangulo.getLeft() + rectangulo.getRight()) / 3) + 10,70, writer.getDirectContent());
+			tablaMailPie.writeSelectedRows(0, 5,(rectangulo.getLeft() + rectangulo.getRight()) / 2.5f, 60,writer.getDirectContent());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
 }

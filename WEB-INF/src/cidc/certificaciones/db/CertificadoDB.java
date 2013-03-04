@@ -103,12 +103,13 @@ public class CertificadoDB extends BaseDB{
 		try {
 			cn=cursor.getConnection(super.perfil);
 			ps=cn.prepareStatement(rb.getString("crearCertificado"));
-			ps.setString(1, certificado.getCuerpo_cer());
-			ps.setString(2, certificado.getCod_verificacion());
-			ps.setLong(3, certificado.getIdPersona());
-			ps.setString(4, certificado.getCedula());
-			ps.setString(5, url);
-			ps.setInt(6, certificado.getIdGrupo());
+			ps.setInt(1, Integer.parseInt(certificado.getTipo()));
+			ps.setString(2, certificado.getCuerpo_cer());
+			ps.setString(3, certificado.getCod_verificacion());
+			ps.setLong(4, certificado.getIdPersona());
+			ps.setString(5, certificado.getCedula());
+			ps.setString(6, url);
+			ps.setInt(7, certificado.getIdGrupo());
 			ps.execute();
 			ps=cn.prepareStatement(rb.getString("Certificado++"));
 			ps.execute();
@@ -196,7 +197,7 @@ public class CertificadoDB extends BaseDB{
 		return listacertificados;
 	}
 	
-	public List buscarCertificadosPersona(long id_persona){
+	public List buscarCertificadosPersona(long id_persona,int tipo){
 		Connection cn=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
@@ -208,7 +209,8 @@ public class CertificadoDB extends BaseDB{
 		try {
 			cn=cursor.getConnection(super.perfil);
 			ps=cn.prepareStatement(rb.getString("BuscarCertificadoPersona"));
-			ps.setLong(1,id_persona);			
+			ps.setLong(1,id_persona);
+			ps.setInt(2, tipo);
 			System.out.println("Consulta: "+ps);
 			rs=ps.executeQuery();
 			while(rs.next()){
