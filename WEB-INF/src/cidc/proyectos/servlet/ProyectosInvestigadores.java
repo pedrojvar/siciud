@@ -27,6 +27,7 @@ import cidc.proyectos.obj.BalanceGeneral;
 import cidc.proyectos.obj.Proyecto;
 import cidc.proyectos.obj.Parametros;
 import cidc.proyectos.obj.ProyectoGenerico;
+import cidc.proyectos.obj.Rubros;
 
 
 public class ProyectosInvestigadores extends ServletGeneral {
@@ -56,6 +57,15 @@ public class ProyectosInvestigadores extends ServletGeneral {
 				irA="/grupos/proyectos/BalanceGeneral.jsp";
 			break;
 			case Parametros.cmdListaGastosRubro:
+				List registroGasto = null;
+				BalanceGeneral balanc =(BalanceGeneral)sesion.getAttribute("balanceProyecto");
+				List<Rubros> lista= balanc.getListaRubros();
+				for (Rubros rubro : lista) {
+					if((rubro.getIdRubro()==Integer.parseInt(req.getParameter("idRub")))&&(rubro.getNombreRubro().equals("Personal"))){
+						registroGasto=lista;
+					}
+				}
+				sesion.setAttribute("gasto", registroGasto);
 				sesion.setAttribute("idRub",req.getParameter("idRub"));
 				req.setAttribute("listaGastosRubro",proyectosDB.getGastosRubrosDeLista((BalanceGeneral)sesion.getAttribute("balanceProyecto"),req.getParameter("idRub")));
 				irA="/grupos/proyectos/ListaGastos.jsp";
