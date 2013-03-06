@@ -2,14 +2,17 @@ package cidc.certificaciones.servlet;
 
 import java.io.IOException;
 
+
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import cidc.adminArticulos.obj.Parametros;
 import cidc.certificaciones.db.CertificadoDB;
 import cidc.certificaciones.obj.CertificacionesOBJ;
-import cidc.certificaciones.obj.Parametros;
+import cidc.convMovilidad.obj.InfoGeneral;
 import cidc.general.db.CursorDB;
 import cidc.general.db.UsuarioDB;
 import cidc.general.login.Usuario;
@@ -36,7 +39,7 @@ public class AdminCertificados extends ServletGeneral{
 	
 		String irA="/Certificados/GenerarCertificado.jsp";
 		switch(accion){
-		case Parametros.BUSCARCERTIFICADOSPERSONA: //
+		case 4:
 			System.out.println("ID PERSONA --->"+usuario.getIdUsuario());
 			persona=usuarioDB.getPersona(usuario.getIdUsuario());
 			sesion.setAttribute("persona",persona);
@@ -49,7 +52,7 @@ public class AdminCertificados extends ServletGeneral{
 			mensaje="Case Pertenencia a Grupo";
 			System.out.println(mensaje);
 		break;
-		case Parametros.PAZYSALVO: 
+		case 2:
 			persona=usuarioDB.getPersona(usuario.getIdUsuario());
 			persona.setEstado(true);
 			sesion.setAttribute("persona",persona);
@@ -62,13 +65,13 @@ public class AdminCertificados extends ServletGeneral{
 			mensaje="Case Paz y Salvo";
 			System.out.println(mensaje);
 		break;
-		case Parametros.ACTIVIDADESINVESTIGACION:
+		case 3:
 			sesion.setAttribute("persona",persona);
 			irA="/Certificados/GenerarCertificado.jsp";
 			mensaje="Case Actividades de Investigación";
 			System.out.println(mensaje);
 		break;		
-		case Parametros.CertPertenencia:
+		case 1:
 			sesion.setAttribute("persona",persona);
 			irA="/certificaciones/CertificadosDoc.x?accion=1&accion2="+persona.getIdPersona();
 			mensaje="Hizo el mapeo del Certificado";	
@@ -85,7 +88,10 @@ public class AdminCertificados extends ServletGeneral{
 			irA="/Certificados/BuscarCertificados.jsp";
 			mensaje="Busqueda de Certificados";			
 		break;
-		case Parametros.BUSCARCERTIFICADOS: 
+		case 6:
+			/*
+			 * 
+			 */
 			persona=usuarioDB.getPersona(usuario.getIdUsuario());
 			sesion.setAttribute("persona",persona);
 			personaid1= persona.getIdPersona();
@@ -111,12 +117,6 @@ public class AdminCertificados extends ServletGeneral{
 			sesion.setAttribute("persona",persona);
 			irA="/Certificados/BuscarCertificados.jsp";
 			mensaje="Busqueda de Certificados";			
-		break;
-		case Parametros.DOCPAZYSALVO:
-			sesion.setAttribute("persona",persona);
-			irA="/certificaciones/CertificadosDoc.x?accion=5&accion2="+persona.getIdPersona();
-			mensaje="Hizo el mapeo del Certificado";	
-			System.out.println(irA);
 		break;
 		}
 		accion=0;

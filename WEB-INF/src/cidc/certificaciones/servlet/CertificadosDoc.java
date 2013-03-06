@@ -54,16 +54,7 @@ public class CertificadosDoc extends ServletGeneral {
 				sesion.removeAttribute("accion");
 				sesion.removeAttribute("listacertificados");
 				sesion.setAttribute("listacertificados",certifidoDB.buscarCertificadosPersona(caso2));
-			break;
-			case Parametros.CertPazSalvo:
-				System.out.println("Para generar el certificado de paz y salvo");
-				sesion.setAttribute("certificado",certifidoDB.certificadoPazSalvo(certificado, path, resp));
-				irA="/Certificados/PazySalvo.jsp";
-				mensaje="Documento creado exitosamente";
-				sesion.removeAttribute("accion");
-				sesion.removeAttribute("listacertificados");
-				sesion.setAttribute("listacertificados",null);
-			break;
+			break;		
 		}
 				
 		caso=0;

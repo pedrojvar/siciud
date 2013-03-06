@@ -17,7 +17,7 @@
 			alert ("Seleccione Grupo/Semillero de investigación");
 			return false;
 		}else{		
-			document.nuevo.accion.value='8';
+			document.nuevo.accion.value='1';
 			document.nuevo.action='<c:url value="/Certificados/llenar.jsp"/>';
 			document.nuevo.submit();
 		}		

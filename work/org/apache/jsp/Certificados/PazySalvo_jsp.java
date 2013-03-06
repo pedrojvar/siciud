@@ -89,7 +89,7 @@ public final class PazySalvo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\talert (\"Seleccione Grupo/Semillero de investigación\");\r\n");
       out.write("\t\t\treturn false;\r\n");
       out.write("\t\t}else{\t\t\r\n");
-      out.write("\t\t\tdocument.nuevo.accion.value='8';\r\n");
+      out.write("\t\t\tdocument.nuevo.accion.value='1';\r\n");
       out.write("\t\t\tdocument.nuevo.action='");
       if (_jspx_meth_c_005furl_005f0(_jspx_page_context))
         return;
@@ -1332,7 +1332,7 @@ public final class PazySalvo_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_th_c_005fif_005f26.setPageContext(_jspx_page_context);
     _jspx_th_c_005fif_005f26.setParent(null);
     // /Certificados/PazySalvo.jsp(120,3) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fif_005f26.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${!sessionScope.paz}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
+    _jspx_th_c_005fif_005f26.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${sessionScope.paz}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
     int _jspx_eval_c_005fif_005f26 = _jspx_th_c_005fif_005f26.doStartTag();
     if (_jspx_eval_c_005fif_005f26 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {

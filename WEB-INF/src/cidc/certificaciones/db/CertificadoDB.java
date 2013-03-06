@@ -18,7 +18,6 @@ import cidc.general.obj.Globales;
 import cidc.general.pdf.DocumentosPDF;
 import cidc.proyectosGeneral.obj.Proyecto;
 import cidc.certificaciones.obj.CertificacionesOBJ;
-import cidc.certificaciones.pdf.GenerarCertificados;
 import cidc.convMovilidad.obj.InfoGeneral;
 
 public class CertificadoDB extends BaseDB{
@@ -29,15 +28,7 @@ public class CertificadoDB extends BaseDB{
 		rb=ResourceBundle.getBundle("cidc.certificaciones.consultas");
 	}
 	
-	/**
-	 * 
-	 * @param cedula
-	 * @param codVerificacion
-	 * @param nombre
-	 * @param apellido
-	 * @param tipo
-	 * @return
-	 */
+	
 	public CertificacionesOBJ crearcertificado1(CertificacionesOBJ certificado, String path, HttpServletResponse resp){
 		System.out.println("Fucnion Certificado1");
 		Connection cn=null;
@@ -75,8 +66,20 @@ public class CertificadoDB extends BaseDB{
 				path+=sep+"Documentos"+sep+"Certificados"+sep+"CIDC_"+certificado.getTipo()+"_"+certificado.getConsCert()+"_"+ano+".pdf";
 				String url="CIDC_"+certificado.getTipo()+"_"+certificado.getConsCert()+"_"+ano+".pdf";
 				pertenencia=new DocumentosPDF();
-				pertenencia.cearCertificado1(certificado, path, resp);
-				insertaCertificadoBD(certificado, url);
+				pertenencia.cearCertificado1(certificado, path, resp);				
+				
+				ps=cn.prepareStatement(rb.getString("crearCertificado"));
+				ps.setString(1, certificado.getCuerpo_cer());
+				ps.setString(2, certificado.getCod_verificacion());
+				ps.setLong(3, certificado.getIdPersona());
+				ps.setString(4, certificado.getCedula());
+				ps.setString(5, url);
+				ps.setInt(6, certificado.getIdGrupo());
+				ps.execute();
+				if(tabla==null){
+					ps=cn.prepareStatement(rb.getString("Certificado++"));
+					ps.execute();
+				}
 				break;
 			}			
 		}catch (SQLException e) {
@@ -91,35 +94,7 @@ public class CertificadoDB extends BaseDB{
 		
 		return certificado;		
 	}
-	
-	/**
-	 * Este metodo inserta los datos del certificado generado 
-	 * @param certificado objeto certificado con toda la informacion necesaria para almacenar en la BD
-	 * @param url url de donde se almacena el certificado
-	 */
-	public void insertaCertificadoBD(CertificacionesOBJ certificado, String url){
-		Connection cn = null;
-		PreparedStatement ps = null;
-		try {
-			cn=cursor.getConnection(super.perfil);
-			ps=cn.prepareStatement(rb.getString("crearCertificado"));
-			ps.setString(1, certificado.getCuerpo_cer());
-			ps.setString(2, certificado.getCod_verificacion());
-			ps.setLong(3, certificado.getIdPersona());
-			ps.setString(4, certificado.getCedula());
-			ps.setString(5, url);
-			ps.setInt(6, certificado.getIdGrupo());
-			ps.execute();
-			ps=cn.prepareStatement(rb.getString("Certificado++"));
-			ps.execute();
-		} catch (Exception e) {
-			lanzaExcepcion(e);
-		}finally{
-			cerrar(ps);
-			cerrar(cn);
-		}
-	}
-	/**
+	/*
 	 * 
 	 */
 	public List buscarCertificados(String cedula, String codVerificacion, String nombre,String apellido,int tipo){
@@ -268,43 +243,5 @@ public class CertificadoDB extends BaseDB{
 			cerrar(cn);
 		}
 		return aPaz;
-	}
-
-	public CertificacionesOBJ certificadoPazSalvo(CertificacionesOBJ certificado, String path, HttpServletResponse resp){
-		System.out.println("Fucnion Certificado2");
-		Connection cn=null;
-		PreparedStatement ps=null;
-		ResultSet rs=null;
-		String consec=null;
-		int i=1;
-		int ano=Calendar.getInstance().get(Calendar.YEAR);
-		try {
-			cn=cursor.getConnection(super.perfil);
-			ps=cn.prepareStatement(rb.getString("datosPersonalPazSalvo"));
-			ps.setLong(1,certificado.getIdPersona());
-			System.out.println("Consulta: "+ps);
-			rs=ps.executeQuery();
-			while(rs.next()){
-				consec = rs.getString(i++);
-				certificado.setNombre(rs.getString(i++));
-				certificado.setCedula(rs.getString(i++));
-				certificado.setNumCedDe(rs.getString(i++));
-				certificado.setTipo("2");
-				certificado.setConsCert(consec);
-			}
-			certificado.setCod_verificacion("CIDC_"+certificado.getTipo()+"_"+consec+"_"+ano);
-			path+=sep+"Documentos"+sep+"Certificados"+sep+"CIDC_"+certificado.getTipo()+"_"+certificado.getConsCert()+"_"+ano+".pdf";
-			String url="CIDC_"+certificado.getTipo()+"_"+certificado.getConsCert()+"_"+ano+".pdf";
-			GenerarCertificados cert= new GenerarCertificados();
-			cert.crearPazySalvo(certificado, path, resp);
-			insertaCertificadoBD(certificado, url);
-		} catch (Exception e) {
-			lanzaExcepcion(e);
-		}finally{
-			cerrar(rs);
-			cerrar(ps);
-			cerrar(cn);
-		}
-		return null;
 	}
 }
