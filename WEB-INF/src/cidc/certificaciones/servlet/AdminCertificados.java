@@ -53,15 +53,8 @@ public class AdminCertificados extends ServletGeneral{
 			System.out.println(mensaje);
 		break;
 		case 2:
-			persona=usuarioDB.getPersona(usuario.getIdUsuario());
-			persona.setEstado(true);
 			sesion.setAttribute("persona",persona);
-			long personaid1= persona.getIdPersona();
-			if(certificadodb.consultarProyectos(personaid1))
-				sesion.setAttribute("paz", true);
-			else
-				sesion.setAttribute("paz", false);
-			irA="/Certificados/PazySalvo.jsp";
+			irA="/Certificados/GenerarCertificado.jsp";
 			mensaje="Case Paz y Salvo";
 			System.out.println(mensaje);
 		break;
@@ -81,27 +74,21 @@ public class AdminCertificados extends ServletGeneral{
 			System.out.println("caso 05 --->");
 			persona=usuarioDB.getPersona(usuario.getIdUsuario());
 			sesion.setAttribute("persona",persona);
-			personaid1= persona.getIdPersona();
-			System.out.println(personaid1);
+			personaid= persona.getIdPersona();
+			System.out.println(personaid);
 			persona.setEstado(true);
 			sesion.setAttribute("persona",persona);
 			irA="/Certificados/BuscarCertificados.jsp";
 			mensaje="Busqueda de Certificados";			
 		break;
-		case 6:
-			/*
-			 * 
-			 */
+		case 6:			
 			persona=usuarioDB.getPersona(usuario.getIdUsuario());
 			sesion.setAttribute("persona",persona);
-			personaid1= persona.getIdPersona();
+			personaid= persona.getIdPersona();
 			String cedula=req.getParameter("cedula");
 			String cod_ver=req.getParameter("cod_verificacion");
-			String nombre=req.getParameter("nombre");
-			String apellido=req.getParameter("apellidos");
-			int tipoCert=Integer.parseInt(req.getParameter("tipo"));
-			System.out.println("CEDULA---->"+cedula+ " COD_VERIFICACIÓN--->"+cod_ver+ " NOMBRE--->"+nombre+ " APELLIDO--->"+apellido+ " TIPO_CERT--->"+tipoCert);
-			sesion.setAttribute("listacertificados",certificadodb.buscarCertificados(cedula, cod_ver,nombre,apellido,tipoCert));
+			System.out.println("CEDULA---->"+cedula+ " COD_VERIFICACIÓN--->"+cod_ver);
+			sesion.setAttribute("listacertificados",certificadodb.buscarCertificados(cedula, cod_ver));
 			System.out.println("Todo Bien");
 			persona.setEstado(true);
 			sesion.setAttribute("persona",persona);
@@ -111,7 +98,7 @@ public class AdminCertificados extends ServletGeneral{
 		case 7:			
 			persona=usuarioDB.getPersona(usuario.getIdUsuario());
 			sesion.setAttribute("persona",persona);
-			personaid1= persona.getIdPersona();			
+			personaid= persona.getIdPersona();			
 			System.out.println("Mostrar el .pdf");
 			persona.setEstado(true);
 			sesion.setAttribute("persona",persona);
