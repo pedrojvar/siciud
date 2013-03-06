@@ -19,8 +19,6 @@ public class CertificadosDoc extends ServletGeneral {
 	public CursorDB cursor;
 	public static char sep=java.io.File.separatorChar;
 	public String [] operaciones(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException {
-		int perteneciaGrupo = 1;
-		int pazSalvo = 2;
 		cursor=new CursorDB();
 		String irA="";
 		HttpSession sesion=req.getSession();
@@ -55,7 +53,7 @@ public class CertificadosDoc extends ServletGeneral {
 				mensaje="Documento creado exitosamente";
 				sesion.removeAttribute("accion");
 				sesion.removeAttribute("listacertificados");
-				sesion.setAttribute("listacertificados",certifidoDB.buscarCertificadosPersona(caso2,perteneciaGrupo));
+				sesion.setAttribute("listacertificados",certifidoDB.buscarCertificadosPersona(caso2));
 			break;
 			case Parametros.CertPazSalvo:
 				System.out.println("Para generar el certificado de paz y salvo");
@@ -64,7 +62,7 @@ public class CertificadosDoc extends ServletGeneral {
 				mensaje="Documento creado exitosamente";
 				sesion.removeAttribute("accion");
 				sesion.removeAttribute("listacertificados");
-				sesion.setAttribute("listacertificados",certifidoDB.buscarCertificadosPersona(caso2,pazSalvo));
+				sesion.setAttribute("listacertificados",null);
 			break;
 		}
 				

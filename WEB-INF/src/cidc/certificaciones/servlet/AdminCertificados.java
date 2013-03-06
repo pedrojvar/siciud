@@ -19,9 +19,7 @@ import cidc.inscripSistema.obj.Persona;
 public class AdminCertificados extends ServletGeneral{
 	public String [] operaciones(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException {
 		//context=config.getServletContext();
-		int accion=0;
-		int perteneciaGrupo = 1;
-		int pazSalvo = 2;
+		int accion=0;	
 		mensaje="Hola";
 		System.out.println(mensaje);
 		cursor=new CursorDB();
@@ -38,7 +36,7 @@ public class AdminCertificados extends ServletGeneral{
 	
 		String irA="/Certificados/GenerarCertificado.jsp";
 		switch(accion){
-		case Parametros.BUSCARCERTIFICADOSPERSONA: 
+		case Parametros.BUSCARCERTIFICADOSPERSONA: //
 			System.out.println("ID PERSONA --->"+usuario.getIdUsuario());
 			persona=usuarioDB.getPersona(usuario.getIdUsuario());
 			sesion.setAttribute("persona",persona);
@@ -46,7 +44,7 @@ public class AdminCertificados extends ServletGeneral{
 			System.out.println(personaid);
 			persona.setEstado(true);
 			sesion.setAttribute("persona",persona);
-			//sesion.setAttribute("listacertificados",certificadodb.buscarCertificadosPersona(personaid,perteneciaGrupo));
+			sesion.setAttribute("listacertificados",certificadodb.buscarCertificadosPersona(personaid));
 			irA="/Certificados/GenerarCertificado.jsp";
 			mensaje="Case Pertenencia a Grupo";
 			System.out.println(mensaje);
@@ -60,7 +58,6 @@ public class AdminCertificados extends ServletGeneral{
 				sesion.setAttribute("paz", true);
 			else
 				sesion.setAttribute("paz", false);
-			sesion.setAttribute("listacertificados",certificadodb.buscarCertificadosPersona(personaid1,pazSalvo));
 			irA="/Certificados/PazySalvo.jsp";
 			mensaje="Case Paz y Salvo";
 			System.out.println(mensaje);
