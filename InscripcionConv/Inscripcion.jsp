@@ -412,7 +412,7 @@
 						<textarea name="propNombre" rows="3" cols="65"></textarea>
 					</td>
 				</tr>
-				<c:if test="${sessionScope.datosConv.convAno!=2012 and sessionScope.datosConv.convNumero!=13}">
+				<c:if test="${sessionScope.datosConv.convAno!=2013 and sessionScope.datosConv.convNumero!=13}">
 				<tr>
 					<th colspan="2"><b>Nombre del Proyecto ingresado en el Plan de Acción:</b></th>
 				</tr>			
@@ -445,7 +445,7 @@
 						<textarea name="propPalClave" rows="1" cols="65"></textarea>
 					</td>
 				</tr>	
-				<c:if test="${sessionScope.datosConv.convAno!=2012 and sessionScope.datosConv.convNumero!=5 and sessionScope.datosConv.convNumero!=6}">
+				<c:if test="${sessionScope.datosConv.convAno!=2013 and sessionScope.datosConv.convNumero!=5 and sessionScope.datosConv.convNumero!=7}">
 				<tr>
 					<th colspan="2" ><b>Abstract: (Inglés)</b></th>
 				</tr>
@@ -458,7 +458,7 @@
 			</table>
 
 		</fieldset>
-		<c:if test="${sessionScope.datosConv.convAno!=2012 and (sessionScope.datosConv.convNumero!=5 or sessionScope.datosConv.convNumero!=6 or sessionScope.datosConv.convNumero!=17)}">
+		<c:if test="${sessionScope.datosConv.convAno!=2013 and (sessionScope.datosConv.convNumero!=5 or sessionScope.datosConv.convNumero!=7 or sessionScope.datosConv.convNumero!=17)}">
 		<fieldset style="width:80%;">
     	<legend class="texto1"><b>Equipo de trabajo Co-Investigadores</b></legend>
 			<table class="tablas" width="100%">
@@ -730,7 +730,7 @@
 						</c:if>
 					</table>
 
-					<c:if test="${sessionScope.datosConv.convNumero!=5 and sessionScope.datosConv.convNumero!=6 and sessionScope.datosConv.convNumero!=9 and sessionScope.datosConv.convNumero!=10 and sessionScope.datosConv.convNumero!=11 and sessionScope.datosConv.convNumero!=12 and sessionScope.datosConv.convNumero!=13}">
+					<c:if test="${sessionScope.datosConv.convNumero!=5 and sessionScope.datosConv.convNumero!=7 and sessionScope.datosConv.convNumero!=9 and sessionScope.datosConv.convNumero!=10 and sessionScope.datosConv.convNumero!=11 and sessionScope.datosConv.convNumero!=12 and sessionScope.datosConv.convNumero!=13}">
 					<table class="tablas" border="0" width="100%">
 					<caption >Rubros financiables por UD y Contrapartida</caption>
 						<tr>
