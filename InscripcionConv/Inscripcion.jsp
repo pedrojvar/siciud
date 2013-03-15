@@ -454,7 +454,17 @@
 						<textarea name="propAbstract" rows="3" cols="65"></textarea>
 					</td>
 				</tr>
-				</c:if>				
+				</c:if>
+				<tr>
+					<th colspan="2"><b>Areas SNIES del Proyecto:</b></th>
+				</tr>
+				<tr>
+					<td colspan="2">							
+						<select name="areaSnies">
+							<option value="0">-------------</option>							
+						</select>				
+					</td>
+				</tr>				
 			</table>
 
 		</fieldset>
