@@ -502,7 +502,11 @@
 				<tr>
 					<td colspan="3">
 						<select name="proyectoinv">
-							<option value="0">--------</option>							
+							<option value="0">---------</option>
+							<c:forEach begin="0" items="${sessionScope.ajaxProyectos}" var="lista">
+							<option value='<c:out value="${lista.idActividad}"/>'><c:out value="${lista.actividad}"/>
+							</option>
+							</c:forEach>							
 						</select>				
 					</td>
 					<td width="30px" align="left"><img src='<c:url value="/comp/img/lupa3.png"/>' onclick="info(9)"></td>

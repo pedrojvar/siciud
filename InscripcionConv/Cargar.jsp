@@ -81,7 +81,7 @@
 						</form>
 					</td>
 				</tr>
-				<c:if test="${sessionScope.datosConv.convAno!=2013}">
+				<c:if test="${sessionScope.datosConv.convAno==2013 and sessionScope.datosConv.convNumero==6}">
 				<tr>
 					<td>
 						<form action='<c:url value="/inscripcionConv/Propuesta.x"/>' name="frm2" method="post" enctype="multipart/form-data">
@@ -92,7 +92,7 @@
 									<td colspan="2" class="renglones"><b>Documentos anexos</b></td>
 								</tr>
 								<tr>
-									<td colspan="2"><p class="texto1j">Un solo documento en formato PDF con los siguientes Datos: Carta de pertinencia social, Impacto ambiental, aporte a la educación y Acta de posesión (El Acta de posesión es ÚNICAMENTE para propuestas que se inscriban en la convocatoria 2009-7)</p></td>
+									<td colspan="2"><p class="texto1j">Un solo documento en formato PDF con los siguientes Datos: Carta de pertinencia social, Impacto ambiental, aporte a la educación <c:if test="${sessionScope.datosConv.convAno==2013 and sessionScope.datosConv.convNumero!=6}">y Acta de posesión (El Acta de posesión es ÚNICAMENTE para propuestas que se inscriban en la convocatoria 2009-7)</c:if></p></td>
 								</tr>
 								<tr>
 									<c:if test="${requestScope.archivos.docAnexo!=null}">
@@ -110,7 +110,7 @@
 					</td>
 				</tr>
 				</c:if>
-				<c:if test="${sessionScope.datosConv.convAno==2013 and (sessionScope.datosConv.convNumero==5 or sessionScope.datosConv.convNumero==7 or sessionScope.datosConv.convNumero==12)}">
+				<c:if test="${sessionScope.datosConv.convAno==2013 and (sessionScope.datosConv.convNumero==5 or sessionScope.datosConv.convNumero==6 or sessionScope.datosConv.convNumero==7 or sessionScope.datosConv.convNumero==12)}">
 				<tr>
 					<td>
 						<form action='<c:url value="/inscripcionConv/Propuesta.x"/>' name="frm3" method="post" enctype="multipart/form-data">
@@ -164,7 +164,7 @@
 					</td>
 				</tr>				
 				</c:if>				
-				<c:if test="${sessionScope.datosConv.convAno==2013 and (sessionScope.datosConv.convNumero==5 or sessionScope.datosConv.convNumero==7)}">
+				<c:if test="${sessionScope.datosConv.convAno==2013 and (sessionScope.datosConv.convNumero==5 or sessionScope.datosConv.convNumero==6 or sessionScope.datosConv.convNumero==7)}">
 				<tr>
 					<td>
 						<form action='<c:url value="/inscripcionConv/Propuesta.x"/>' name="frm5" method="post" enctype="multipart/form-data">
