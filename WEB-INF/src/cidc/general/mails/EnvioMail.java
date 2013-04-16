@@ -20,7 +20,7 @@ public class EnvioMail {
 	private String clave=null;
 	private String de=null;
 	private String smtpHost="mail.udistrital.edu.co";
-	private ResourceBundle rb=ResourceBundle.getBundle("cidc.general.mails.listaCorreos");;
+	private ResourceBundle rb=ResourceBundle.getBundle("cidc.general.conect");
 
 	private class Autenticador extends Authenticator{
 		public PasswordAuthentication getPasswordAuthentication(){
@@ -29,6 +29,9 @@ public class EnvioMail {
 	}
 
 	public EnvioMail(String cuenta){
+		System.out.println(cuenta+ " cuenta:");
+		System.out.println(rb.getString(cuenta)+" clave ");
+		System.out.println(rb.getString(cuenta+"Key"));
 		this.usuario=rb.getString(cuenta);
 		this.clave=rb.getString(cuenta+"Key");
 		this.de="Centro Investigaciones SICIUD<"+usuario+">";
