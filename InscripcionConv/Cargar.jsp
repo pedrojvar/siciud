@@ -89,7 +89,7 @@
 						</form>
 					</td>
 				</tr>
-				<c:if test="${sessionScope.datosConv.convAno==2013 and sessionScope.datosConv.convNumero==6}">
+				<c:if test="${sessionScope.datosConv.convAno==2013 and (sessionScope.datosConv.convNumero==6  or sessionScope.datosConv.convNumero==8)}">
 				<tr>
 					<td>
 						<form action='<c:url value="/inscripcionConv/Propuesta.x"/>' name="frm2" method="post" enctype="multipart/form-data">
