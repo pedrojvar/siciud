@@ -204,7 +204,7 @@
 					</td>
 				</tr>				
 				</c:if>				
-				<c:if test="${sessionScope.datosConv.convAno==2013 and (sessionScope.datosConv.convNumero==5 or sessionScope.datosConv.convNumero==6 or sessionScope.datosConv.convNumero==7)}">
+				<c:if test="${sessionScope.datosConv.convAno==2013 and (sessionScope.datosConv.convNumero==5 or sessionScope.datosConv.convNumero==7)}">
 				<tr>
 					<td>
 						<form action='<c:url value="/inscripcionConv/Propuesta.x"/>' name="frm5" method="post" enctype="multipart/form-data">
