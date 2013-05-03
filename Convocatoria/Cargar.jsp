@@ -112,8 +112,23 @@
 					</td>
 				</tr>
 			</table>
-			<h5><c:out value="${requestScope.estado}" default="Seleccione el archivo que desea cargar "/></h5>
+		<%--	<h5><c:out value="${requestScope.estado}" default="Seleccione el archivo que desea cargar "/></h5>--%>
 			</form>
+		
+			<form method="POST" enctype="multipart/form-data" name="frmAdendo" action='<c:url value="/AdendoArchivo.x"/>' method="post">
+			<table class="tablas" width="100%">
+			<caption>Adendo</caption>
+				<tr>
+					<td>
+						<input class="caja0" type="file" name="adendo" size="50">
+					</td>
+					<td>
+						<img src="<c:url value="/comp/img/Cargar.gif"/>" onclick="guardar(document.frmAdendo.adendo,document.frmAdendo)"> 
+					</td>
+				</tr>
+			</table>
+			</form>
+			<h5><c:out value="${requestScope.estado}" default="Seleccione el archivo que desea cargar "/></h5>
 		</fieldset>
 	</c:if>
 	<c:if test='${sessionScope.convocatoriaOBJ==null}'>
