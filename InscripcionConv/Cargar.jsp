@@ -144,7 +144,7 @@
 					</td>
 				</tr>
 				</c:if>
-				<c:if test="${sessionScope.datosConv.convAno==2013 and (sessionScope.datosConv.convNumero==5 or sessionScope.datosConv.convNumero==6 or sessionScope.datosConv.convNumero==7 or 
+				<c:if test="${sessionScope.datosConv.convAno==2013 and (sessionScope.datosConv.convNumero==5 or sessionScope.datosConv.convNumero==6 or sessionScope.datosConv.convNumero==7
 				sessionScope.datosConv.convNumero==12 or sessionScope.datosConv.convNumero==13 }">
 				<tr>
 					<td>
